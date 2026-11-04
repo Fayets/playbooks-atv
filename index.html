@@ -402,6 +402,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 (function(){
   'use strict';
   var SAVED = JSON.parse(document.getElementById('content').textContent);
+  /* Subir este número cuando cambien los PDF: los navegadores los guardan en caché. */
+  var VER = '?v=2';
   var IMG = {}; try{ IMG = JSON.parse(document.getElementById('imgs').textContent); }catch(e){}
   function cov(pb){ return (IMG[pb.id]&&IMG[pb.id].c) || (dir(pb)+'cover.jpg'); }
   var C = SAVED;
@@ -623,7 +625,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   }
   function pdfSource(pb){
     var opts={isEvalSupported:false,disableFontFace:true,disableRange:true,disableStream:true};
-    if(!LOCAL){ opts.url='pdf/'+encodeURIComponent(pb.file); return Promise.resolve(opts); }
+    if(!LOCAL){ opts.url='pdf/'+encodeURIComponent(pb.file)+VER; return Promise.resolve(opts); }
     return addScript('pdf/datos/'+pb.id+'.js').then(function(){
       var bin=atob(window.__PDF[pb.id]), n=bin.length, out=new Uint8Array(n);
       for(var i=0;i<n;i++) out[i]=bin.charCodeAt(i);
@@ -648,7 +650,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   function openDoc(pb){
     closeDoc();
     var token=PV.token;
-    var dl=$('pv-dl'); dl.hidden=!!window.claude; dl.href='pdf/'+encodeURIComponent(pb.file); dl.setAttribute('download',pb.file);
+    var dl=$('pv-dl'); dl.hidden=!!window.claude; dl.href='pdf/'+encodeURIComponent(pb.file)+VER; dl.setAttribute('download',pb.file);
     pdfLib().then(function(){ return pdfSource(pb); }).then(function(src){
       if(token!==PV.token) return null;
       PV.task=window.pdfjsLib.getDocument(src);
@@ -672,7 +674,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   }
   function pageImage(p){
     var fig=$('pg-'+p); if(!fig||fig.querySelector('img')||!cur) return;
-    var im=new Image(); im.alt=''; im.decoding='async'; im.src=IMG[cur.id].p[p-1]; fig.appendChild(im);
+    var im=new Image(); im.alt=''; im.decoding='async'; im.src=IMG[cur.id].p[p-1]+VER; fig.appendChild(im);
   }
   function drop(p){
     var st=PV.st[p], fig=$('pg-'+p); if(!st||!fig) return;
