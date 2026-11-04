@@ -17,7 +17,7 @@ dentro de la web y panel de resumen al costado de cada playbook.
 
 ## Notas para seguir trabajando
 
+- La página 1 de cada PDF es la portada ilustrada del home, en formato 4:3 y como imagen. El resto de las páginas sigue en A4. En `index.html` la regla `.page[data-p="1"]` le da ese formato.
 - Los textos se leen del bloque JSON `id="content"` de `index.html`. Para cambiar un texto, editá ese bloque (o regeneralo desde `contenido.json`).
-- El botón "Editar textos" y el guardado solo funcionaban dentro de Claude (usaban las funciones de los artifacts de claude.ai). Fuera de Claude el botón no aparece.
 - El visor no tiene bordes porque cada página va sobre una franja de su mismo color: crema (`--pdf-paper`) y oscuro (`--pdf-dark`) en la primera y la última. Si un PDF nuevo cambia esos colores, hay que ajustar `bandsHtml` en `index.html`.
 - Las tipografías son las del sistema (Helvetica en Mac/iPhone). Si querés volver a usar Helvetica Now Display y Hoosegow, agregá los `@font-face` en el `<style>` y las variables `--font-display` y `--font-slab`.
