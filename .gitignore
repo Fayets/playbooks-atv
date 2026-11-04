@@ -1,0 +1,3 @@
+.DS_Store
+# Solo sirven para abrir index.html con doble clic; en el servidor se leen los PDF.
+pdf/datos/

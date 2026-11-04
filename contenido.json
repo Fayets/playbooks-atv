@@ -1,0 +1,642 @@
+{
+  "site": {
+    "eyebrow": "Playbooks ATV",
+    "byline": "Por Juan Carrizo · @juanxcarrizo",
+    "title1": "SISTEMA DE CONTENIDO",
+    "title2": "$200K/MES",
+    "lede": "18 playbooks para dejar de depender de anuncios, armar una marca personal de cero, hacer que las historias vendan y leer las métricas. Escribí tu problema en el buscador, abrí el playbook que lo resuelve y aplicalo esta semana.",
+    "stat1n": "18",
+    "stat1a": "Playbooks",
+    "stat1b": "tres por serie, con la instalación día por día",
+    "stat2n": "06",
+    "stat2a": "Series",
+    "stat2b": "de la marca personal a las métricas",
+    "stat3n": "161",
+    "stat3a": "Páginas para leer acá",
+    "stat3b": "sin salir de la plataforma ni abrir Drive",
+    "searchHint": "Escribí lo que te está pasando y te mostramos el playbook que lo resuelve.",
+    "footer": "El valor se potencia en la conexión"
+  },
+  "suggestions": [
+    "No sé qué subir",
+    "Me quedo sin ideas",
+    "Mis historias no venden",
+    "Mis reels no pasan de 1000 views",
+    "Tengo views pero no vendo",
+    "Nadie responde mis CTAs",
+    "Arranco mi marca de cero",
+    "Mi equipo no entiende qué hacer"
+  ],
+  "series": [
+    {
+      "id": "s1",
+      "title": "Cómo no depender de anuncios"
+    },
+    {
+      "id": "s2",
+      "title": "Cómo crear una marca personal de 0"
+    },
+    {
+      "id": "s3",
+      "title": "Rendimiento en el contenido"
+    },
+    {
+      "id": "s4",
+      "title": "Entender las métricas para tener resultados"
+    },
+    {
+      "id": "s5",
+      "title": "Cómo crear contenido"
+    },
+    {
+      "id": "s6",
+      "title": "Estrategia de contenido: reels, historias y YouTube"
+    }
+  ],
+  "playbooks": [
+    {
+      "id": "s1-1",
+      "file": "NoDependerAnuncios_01_Contenido_que_se_crea_solo.pdf",
+      "pages": 9,
+      "title": "Cómo hacer que tu contenido se cree solo",
+      "desc": "De las métricas a la estrategia y recién después a la creación: la cuenta que te dice qué subir cada semana.",
+      "sections": [
+        "El orden",
+        "Ingeniería inversa",
+        "La meta",
+        "La salida",
+        "El análisis semanal",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Dejás de subir a ciegas: sabés qué número tiene que mover tu contenido este mes.",
+        "Hacés la cuenta de tu mejor mes al revés, de la facturación hasta los chats que la abrieron.",
+        "Convertís el resultado que querés en una meta mensual de chats, repartida entre reels e historias.",
+        "Cada pieza sale con una salida pensada para abrir una conversación.",
+        "Instalás un análisis de los lunes que mira chats, no views, y repite lo que funcionó."
+      ],
+      "funciona": "A las cuatro semanas sabés cuántos chats necesitás y qué contenido los abre. Si seguís subiendo sin saber por qué, volvé al día 03: la meta no está clara.",
+      "problemas": [
+        "no sé qué subir",
+        "subo contenido y no sé si funciona",
+        "dependo de anuncios",
+        "quiero más chats y conversaciones",
+        "cómo medir mi contenido",
+        "contenido sin resultados",
+        "quiero duplicar mis ventas",
+        "meta mensual de contenido",
+        "estrategia de contenido orgánico"
+      ]
+    },
+    {
+      "id": "s1-2",
+      "file": "NoDependerAnuncios_02_Metodo_de_las_semillas.pdf",
+      "pages": 9,
+      "title": "Cómo crear contenido sin quedarte sin ideas",
+      "desc": "El método de las semillas: de dónde salen las ideas, cómo se juntan y cómo se convierten en un formato que repetís.",
+      "sections": [
+        "Creador, no hacedor",
+        "Las semillas",
+        "Dónde buscar",
+        "La mezcla",
+        "Referencia e intención",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Dejás de trabarte frente a la hoja en blanco, sin depender de la inspiración ni de la IA.",
+        "Armás un banco de semillas con lo que te llama la atención y con tus videos que mejor funcionaron.",
+        "Mezclás semillas de referentes de otros nichos en una pieza concreta, como un caso de éxito rehecho.",
+        "Convertís lo que funcionó en un formato propio que podés repetir.",
+        "Cada pieza del calendario lleva su ficha de referencia e intención."
+      ],
+      "funciona": "A las cuatro semanas no te sentás nunca con la hoja en blanco: cada pieza arranca con semillas y una referencia. Si todavía te trabás, volvé al día 02: te faltan semillas propias.",
+      "problemas": [
+        "me quedo sin ideas",
+        "no sé de qué hablar",
+        "bloqueo creativo",
+        "hoja en blanco",
+        "dependo de la IA para crear",
+        "no tengo inspiración",
+        "cómo usar referentes",
+        "crear un formato propio"
+      ]
+    },
+    {
+      "id": "s1-3",
+      "file": "NoDependerAnuncios_03_Embudo_organico.pdf",
+      "pages": 8,
+      "title": "Cómo atraer leads calificados con orgánico sin perder alcance",
+      "desc": "El embudo orgánico como equilibrio: qué le mostrás a muchos, qué a pocos y cómo entretener sin dejar de calificar.",
+      "sections": [
+        "Tu voz",
+        "El embudo",
+        "YouTube",
+        "El tiempo",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Tu contenido suena a vos: decís lo que pensás de tu nicho en vez de repetir lo que dicen todos.",
+        "Entendés por qué algunas piezas las ve poca gente y por qué eso es parte del embudo.",
+        "Repartís la semana en tres capas: mayoría TOFU, algo de MOFU y una o dos piezas BOFU.",
+        "Escribís videos de YouTube con un valor distinto, un título que ahorra tiempo y una razón para llegar al final.",
+        "Fijás una cantidad semanal que no baja y le das 60 días antes de juzgar el resultado."
+      ],
+      "funciona": "A los dos meses los testimonios tienen menos views que el lifestyle y más gente calificada escribiendo. Si todo tiene las mismas views, no estás usando las tres capas: volvé al día 03.",
+      "problemas": [
+        "atraer leads calificados",
+        "pierdo alcance cuando vendo",
+        "mi contenido suena igual a todos",
+        "bajaron mis views",
+        "tofu mofu bofu",
+        "embudo orgánico",
+        "cuánto tarda el orgánico",
+        "no soy constante"
+      ]
+    },
+    {
+      "id": "s2-1",
+      "file": "MarcaPersonal_01_Las_bases.pdf",
+      "pages": 9,
+      "title": "Cómo definir las bases de tu marca personal antes de grabar",
+      "desc": "Los primeros diez días: a quién le hablás, qué te hace distinto, qué vendés y cómo se ve tu perfil.",
+      "sections": [
+        "Las bases",
+        "El ICP",
+        "El diferencial",
+        "La oferta",
+        "El perfil",
+        "Diez días"
+      ],
+      "resuelve": [
+        "Definís a quién le hablás: un dream follower concreto, no un grupo.",
+        "Encontrás tu diferencial y lo cerrás en una frase: «no soy otro…, soy el que…».",
+        "Dibujás el vehículo (punto A, punto B y los pasos del medio) y empaquetás la oferta en una frase.",
+        "Optimizás el perfil: foto, bio y tres posts fijados con tu historia, tu mecanismo y tus casos.",
+        "Llegás al primer reel sabiendo a quién le hablás, con qué y para vender qué."
+      ],
+      "funciona": "Al día 10 podés explicar en una frase a quién ayudás, con qué y a pasar de qué a qué, y tu perfil lo muestra. Si todavía no sabés qué grabar, la base floja es la oferta: volvé al día 04.",
+      "problemas": [
+        "arranco mi marca de cero",
+        "empezar marca personal",
+        "no sé a quién hablarle",
+        "definir mi cliente ideal icp",
+        "no tengo diferencial",
+        "no sé qué vender",
+        "armar mi oferta",
+        "optimizar perfil y bio"
+      ]
+    },
+    {
+      "id": "s2-2",
+      "file": "MarcaPersonal_02_Primeros_30_dias.pdf",
+      "pages": 9,
+      "title": "Cómo armar tus primeros 30 días de contenido",
+      "desc": "Del día 10 al 40: volumen con intención, cuatro reels por semana, un video de YouTube y las historias como laboratorio.",
+      "sections": [
+        "Volumen",
+        "La semana",
+        "El MOFU",
+        "YouTube",
+        "Historias",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Pasás de sobrepensar cada video a tener volumen: cuatro reels por semana y un video de YouTube.",
+        "Cada reel tiene una intención escrita: dos TOFU, un MOFU y un BOFU.",
+        "Armás reels que rompen una creencia de tu nicho y la llevan a tu territorio.",
+        "Usás YouTube como un curso gratuito semanal y las historias como laboratorio con encuestas.",
+        "Al día 40 tenés dos o tres ángulos que pegaron, listos para convertir."
+      ],
+      "funciona": "Al día 40 tenés 16 a 20 reels y 4 o 5 videos subidos, dos o tres ángulos que pegaron y encuestas que te confirman a quién estás trayendo. Si no llegaste al volumen, el problema no es de ideas: volvé al día 05 y grabá.",
+      "problemas": [
+        "cuánto subir por semana",
+        "frecuencia de publicación",
+        "sobrepienso cada video",
+        "calendario de contenido",
+        "primer mes de contenido",
+        "qué subir en youtube",
+        "encuestas en historias",
+        "no soy constante"
+      ]
+    },
+    {
+      "id": "s2-3",
+      "file": "MarcaPersonal_03_De_views_a_DMs_calificados.pdf",
+      "pages": 9,
+      "title": "Cómo pasar de views y guardados a DMs calificados que agendan",
+      "desc": "Del día 40 al 90: duplicar lo que funcionó, pasar de valor a venta y medir DMs en vez de views.",
+      "sections": [
+        "Duplicar",
+        "YouTube que vende",
+        "Precio y producto",
+        "Historias que convierten",
+        "El diagnóstico",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Duplicás los tres ángulos que más DMs y comentarios trajeron y cortás el resto.",
+        "Sumás en YouTube un video que vende: valor más un VSL suave.",
+        "Definís un precio de lanzamiento y armás el producto con tus primeros clientes.",
+        "Activás secuencias de historias que se convierten en DMs calificados.",
+        "Medís una sola cosa por semana, los DMs calificados, con una regla para saber dónde se traba."
+      ],
+      "funciona": "Al día 90 tenés tres a cinco clientes, diez a catorce videos, el perfil consistente y cincuenta DMs calificados procesados. Si falta alguno, el diagnóstico de la página 05 te dice en qué capa trabajar.",
+      "problemas": [
+        "tengo views pero no vendo",
+        "muchos seguidores pocas ventas",
+        "conseguir mis primeros clientes",
+        "pasar de views a ventas",
+        "dms calificados",
+        "ponerle precio a mi oferta",
+        "vsl",
+        "convertir seguidores en clientes"
+      ]
+    },
+    {
+      "id": "s3-1",
+      "file": "Rendimiento_01_Historias_que_venden.pdf",
+      "pages": 9,
+      "title": "Cómo hacer historias que venden sin parecer marketing",
+      "desc": "El marco A → B → vehículo: hablar de lo que la gente quiere y camuflar en el medio lo que vendés.",
+      "sections": [
+        "El síntoma",
+        "El marco",
+        "El ejemplo",
+        "La medida",
+        "La variedad",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Entendés por qué las historias que venden las ve poca gente: hablan del vehículo y no del cambio.",
+        "Aplicás el marco A → B → vehículo: mostrás el deseo y camuflás en el medio lo que vendés.",
+        "Reescribís una secuencia completa de historias con ese marco.",
+        "Medís cada secuencia por calificados y ventas, no por respuestas ni views.",
+        "Variás el formato cada semana manteniendo el mismo marco."
+      ],
+      "funciona": "A las cuatro semanas las secuencias que más calificados traen son las que hablan del cambio, no del vehículo, y cada semana hay una de un formato nuevo. Si las views siguen cayendo cuando aparece lo que vendés, volvé al día 03: el vehículo todavía no está camuflado.",
+      "problemas": [
+        "mis historias no venden",
+        "historias con pocas views",
+        "vender en historias sin parecer vendedor",
+        "secuencias de historias",
+        "caen las views cuando vendo",
+        "stories que convierten",
+        "sueno a anuncio"
+      ]
+    },
+    {
+      "id": "s3-2",
+      "file": "Rendimiento_02_Encontrar_lo_que_funciona.pdf",
+      "pages": 9,
+      "title": "Cómo encontrar siempre el formato que funciona con un registro de pruebas",
+      "desc": "Cambiar de proyector, apagar lámparas y construir el edificio: la mentalidad con la que se afronta el marketing.",
+      "sections": [
+        "El proyector",
+        "Las lámparas",
+        "El edificio",
+        "El registro",
+        "La mente",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Entendés que tu resultado de hoy es lo que probaste ayer.",
+        "Listás los formatos, ángulos y canales que todavía no probaste.",
+        "Programás una prueba nueva por semana, con tu predicción escrita.",
+        "Registrás cada prueba (formato, resultado y aprendizaje) para que siempre deje un dato.",
+        "Sostenés el ritmo de tres errores por cada acierto sin frustrarte."
+      ],
+      "funciona": "A las cuatro semanas tenés cuatro pruebas registradas, una que pegó y tres caminos descartados. Si no probaste nada nuevo, el problema no es de contenido: volvé al día 05 y mirá qué cifra estás cuidando.",
+      "problemas": [
+        "no sé qué formato funciona",
+        "estoy estancado",
+        "siempre hago el mismo contenido",
+        "me frustran los resultados",
+        "probar formatos nuevos",
+        "mentalidad",
+        "miedo a fallar",
+        "registro de pruebas"
+      ]
+    },
+    {
+      "id": "s3-3",
+      "file": "Rendimiento_03_Ideas_y_organizacion.pdf",
+      "pages": 9,
+      "title": "De dónde sacar ideas y cómo organizar tu semana de contenido",
+      "desc": "Las dos fuentes de ideas, la hoja de una página y los referentes que ya tienen los datos que a vos te faltan.",
+      "sections": [
+        "Las dos fuentes",
+        "La hoja",
+        "Las respuestas",
+        "Los referentes",
+        "El respaldo",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Sacás ideas de dos fuentes que ya tenés: el onboarding de tus clientes y lo que les respondés.",
+        "Armás la semana en una hoja de una página: qué falta, tres canales, qué y dónde buscar.",
+        "Usás a tus referentes como datos de pruebas que otros ya pagaron.",
+        "Buscás un molde por idea: el video con más visitas sobre ese mismo problema.",
+        "Dejás listo tu respaldo (un caso, un video de valor y un perfil claro) para cuando te entren a mirar."
+      ],
+      "funciona": "A las cuatro semanas no te sentás a pensar ideas: las sacás del onboarding, de tus clientes y de los referentes, y la hoja se arma en tres minutos. Si todavía te quedás en blanco, volvé al día 04: no estás anotando lo que respondés.",
+      "problemas": [
+        "organizar mi semana de contenido",
+        "no sé de dónde sacar ideas",
+        "planificar contenido",
+        "no tengo tiempo para crear",
+        "referentes",
+        "ideas a partir de clientes",
+        "poco tiempo por semana"
+      ]
+    },
+    {
+      "id": "s4-1",
+      "file": "Metricas_01_Que_atrae_y_que_convierte.pdf",
+      "pages": 9,
+      "title": "Cómo saber qué atrae y qué convierte a tu cliente ideal",
+      "desc": "Ingeniería inversa de tus veinte mejores clientes: de qué historias vinieron, qué dolor los trajo y desde qué posicionamiento compraron.",
+      "sections": [
+        "La pregunta",
+        "La ingeniería inversa",
+        "Las conclusiones",
+        "El cruce",
+        "El dato manda",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Achicás la pregunta a tus diez o veinte mejores clientes, los que pagaron.",
+        "Rastreás de dónde vino cada uno y qué historia contestó antes de agendar.",
+        "Separás dolor y posicionamiento para encontrar los patrones que se repiten.",
+        "Escribís un documento de conclusiones de una página del que sale todo el contenido.",
+        "Lo cruzás cada semana con los reportes de venta y dejás que el dato decida."
+      ],
+      "funciona": "A las cuatro semanas el creador no te pregunta de qué hablar: lo saca del documento. Si todavía hay ruido, volvé al día 01: estás analizando toda la base en vez de a los que pagaron.",
+      "problemas": [
+        "no sé quién me compra",
+        "qué contenido convierte",
+        "por qué me compran",
+        "conocer a mi cliente ideal",
+        "análisis de clientes",
+        "posicionamiento",
+        "de qué hablar en mi contenido"
+      ]
+    },
+    {
+      "id": "s4-2",
+      "file": "Metricas_02_Una_accion_por_mes.pdf",
+      "pages": 9,
+      "title": "Cómo arreglar una métrica baja con una sola acción por mes",
+      "desc": "Las métricas solo te dicen dónde estás; el crecimiento sale de resolver un problema grande por mes y de objetivos simples.",
+      "sections": [
+        "El mapa",
+        "Un problema por mes",
+        "La acción inevitable",
+        "El objetivo simple",
+        "El ciclo",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Leés tus métricas como un mapa: te dicen dónde estás, no cómo llegar.",
+        "Elegís un solo problema por mes, el que más te traba.",
+        "Encontrás la acción inevitable que produce el número sola: una reunión, un laboratorio o un formulario.",
+        "Escribís un objetivo simple por persona, visible y lograble.",
+        "Cerrás cada mes sabiendo qué número se movió y por qué."
+      ],
+      "funciona": "Al cierre del mes un número se movió y sabés por qué acción. Si solo tenés métricas nuevas y ninguna acción cumplida, volvé al día 05: el objetivo todavía era una métrica.",
+      "problemas": [
+        "tengo métricas y no sé qué hacer",
+        "métrica baja",
+        "objetivos del mes",
+        "no sé qué priorizar",
+        "mi negocio no crece",
+        "kpis",
+        "hago muchas cosas a la vez"
+      ]
+    },
+    {
+      "id": "s4-3",
+      "file": "Metricas_03_Tareas_simples.pdf",
+      "pages": 9,
+      "title": "Cómo convertir tu estrategia de marketing en tareas simples que se cumplen",
+      "desc": "Sos el traductor: del qué al cómo, un formulario para el setter, un calendario para el creador, un solo documento para todo.",
+      "sections": [
+        "El traductor",
+        "El setter",
+        "El creador",
+        "El CTA",
+        "Un solo lugar",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Te ponés en rol de traductor: de lo que vos entendés a lo que cada persona puede ejecutar.",
+        "Armás un formulario diario para el setter con tus preguntas escondidas adentro.",
+        "Le das al creador un avatar de cinco líneas, pilares de contenido y un objetivo de una línea.",
+        "Acompañás cada CTA con una ficha para ventas: dolor, fricción, recurso y objetivo.",
+        "Guardás marketing, ventas y producto en un solo tablero."
+      ],
+      "funciona": "A las cuatro semanas nadie del equipo te pregunta «¿y cómo hago esto?». Si siguen preguntando, volvé al día 01: la instrucción todavía está en chino.",
+      "problemas": [
+        "mi equipo no entiende qué hacer",
+        "delegar contenido",
+        "setter",
+        "creador de contenido o editor",
+        "dar instrucciones claras",
+        "el equipo me pregunta todo",
+        "procesos de marketing"
+      ]
+    },
+    {
+      "id": "s5-1",
+      "file": "CrearContenido_01_De_la_llamada_al_reel.pdf",
+      "pages": 9,
+      "title": "Cómo convertir lo que explicás en llamadas en contenido grabado",
+      "desc": "El flow state: capturar tus mejores respuestas, pensar el hook en vivo y grabar apenas terminás, con la misma voz con la que le hablás a un cliente.",
+      "sections": [
+        "El flow state",
+        "La captura",
+        "El hook en vivo",
+        "La voz",
+        "Rehacer",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Capturás las ideas que salen cuando explicás algo en vivo, antes de que se pierdan.",
+        "Instalás un sistema simple: cámara fija, libreta y grabar apenas terminás.",
+        "Pensás el hook primero y grabás con la misma voz con la que le hablás a un cliente.",
+        "Rehacés tus reels viejos de valor con un mejor formato.",
+        "Cada bloque de reuniones te deja uno o dos reels grabados."
+      ],
+      "funciona": "A las cuatro semanas cada bloque de reuniones deja uno o dos reels grabados, y ninguno es un recorte. Si capturás ideas y no las grabás, volvé al día 04: estás esperando el guion perfecto.",
+      "problemas": [
+        "me cuesta grabar",
+        "sueno robótico en cámara",
+        "no sé hacer hooks",
+        "aprovechar mis reuniones para contenido",
+        "reciclar contenido viejo",
+        "guion perfecto",
+        "grabar rápido con poco tiempo"
+      ]
+    },
+    {
+      "id": "s5-2",
+      "file": "CrearContenido_02_Reel_de_nicho_mucha_gente.pdf",
+      "pages": 9,
+      "title": "Cómo hacer que un reel de nicho lo vea mucha gente",
+      "desc": "Engañar al algoritmo: hook abierto, mostrar cosas, revelar tarde y camuflar el caso de éxito en valor.",
+      "sections": [
+        "La competencia",
+        "El hook abierto",
+        "El ejemplo",
+        "Mostrar y camuflar",
+        "El perfil",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Entendés contra qué compite tu reel y por qué el contenido hecho solo para tu ICP se estanca.",
+        "Escribís hooks abiertos que entiende cualquiera, sin cambiar de tema.",
+        "Mostrás cosas reales (documentos, calendarios) que valen una captura y un guardado.",
+        "Camuflás el caso de éxito al final, después del valor.",
+        "Revisás tu perfil para que tenga variedad de intención."
+      ],
+      "funciona": "A las cuatro semanas hay reels que pasaron las mil views sin cambiar de tema, y los comentarios traen gente calificada. Si siguen estancados, volvé al día 02: el hook todavía filtra.",
+      "problemas": [
+        "mis reels no pasan de 1000 views",
+        "reels estancados",
+        "más alcance",
+        "hooks",
+        "algoritmo de instagram",
+        "guardados",
+        "casos de éxito aburridos",
+        "tema aburrido"
+      ]
+    },
+    {
+      "id": "s5-3",
+      "file": "CrearContenido_03_Mecanismo_y_promesa.pdf",
+      "pages": 9,
+      "title": "Cómo explicar tu mecanismo en un video de YouTube y ponerle una promesa que venda",
+      "desc": "El mecanismo explicado sin nombrarlo, los fijados, las destacadas y por qué las bases se renuevan cada tres a seis meses.",
+      "sections": [
+        "Las bases",
+        "El mecanismo",
+        "La promesa",
+        "Fijados y destacadas",
+        "El mejor funnel",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Ordenás las bases que alimenta todo tu contenido: video principal, fijados, destacadas, foto y bio.",
+        "Explicás tu mecanismo con las palabras del cliente, sin esconderlo detrás de un nombre.",
+        "Armás una promesa con un número, un «sin» y algo raro.",
+        "Hacés que fijados, destacadas y YouTube cuenten la misma historia.",
+        "Fijás una fecha de renovación de tus bases cada seis meses."
+      ],
+      "funciona": "A las cuatro semanas quien entra desde un reel encuentra la misma historia en fijados, destacadas y YouTube. Si la gente llega y no sabe qué hacés, volvé al día 02: el mecanismo sigue escondido detrás del nombre.",
+      "problemas": [
+        "la gente no entiende qué hago",
+        "propuesta de valor",
+        "promesa",
+        "mecanismo único",
+        "destacadas",
+        "posts fijados",
+        "video de youtube que venda",
+        "diferenciarme"
+      ]
+    },
+    {
+      "id": "s6-1",
+      "file": "AlvaroOlga_01_Reels_como_trailer.pdf",
+      "pages": 9,
+      "title": "Cómo hacer que tus reels lleven gente a YouTube",
+      "desc": "El reel como tráiler, no como anuncio: un insight parcial y una pregunta que solo se cierra en el video largo.",
+      "sections": [
+        "Tráiler, no anuncio",
+        "La estructura",
+        "Desde YouTube hacia atrás",
+        "Rotar",
+        "El laboratorio",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Entendés por qué tus reels no llevan a nadie a YouTube: funcionan como anuncio y no como tráiler.",
+        "Escribís reels con un insight parcial y una pregunta que solo se cierra en el video largo.",
+        "Ordenás el proceso: primero el video largo, después el reel.",
+        "Rotás tráilers nuevos hacia los videos que ya vendieron.",
+        "Montás un laboratorio de ganchos: tres por video, uno por semana."
+      ],
+      "funciona": "A las cuatro semanas los videos viejos vuelven a recibir visitas y los comentarios con la palabra suben. Si siguen sin ir al video, volvé al día 04: el reel está dando todo o no está dando nada.",
+      "problemas": [
+        "mis reels no llevan a youtube",
+        "pocas vistas en youtube",
+        "youtube no me trae clientes",
+        "reel como tráiler",
+        "ganchos",
+        "videos viejos sin visitas"
+      ]
+    },
+    {
+      "id": "s6-2",
+      "file": "AlvaroOlga_02_Respuestas_en_tus_CTAs.pdf",
+      "pages": 9,
+      "title": "Cómo tener muchas respuestas en tus CTAs",
+      "desc": "La urgencia en el CTA, la pieza que falta del rompecabezas y las historias que educan antes de que la persona agende.",
+      "sections": [
+        "La urgencia",
+        "El tono",
+        "La pieza que falta",
+        "El código",
+        "Educar",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Pedís con urgencia: de «qué interesante» a «lo tengo que ver ahora».",
+        "Pedís con tu propio tono, el mismo de tus secuencias con más respuestas.",
+        "Siempre dejás una pieza afuera: das el qué y el por qué, no todo.",
+        "Escondés un código en el video para que el contenido mismo pida.",
+        "Educás la objeción del mes con historias antes de que la persona agende."
+      ],
+      "funciona": "A las cuatro semanas las redirecciones a YouTube tienen decenas de respuestas, no cinco, y ventas nota que la objeción bajó. Si siguen contestando pocos, volvé al día 02: estás pidiendo con tono de anuncio.",
+      "problemas": [
+        "nadie responde mis ctas",
+        "pocas respuestas en historias",
+        "llamado a la acción",
+        "sueno a anuncio",
+        "objeciones",
+        "los leads llegan fríos",
+        "pedir sin vender"
+      ]
+    },
+    {
+      "id": "s6-3",
+      "file": "AlvaroOlga_03_Adaptarlo_a_tu_marca.pdf",
+      "pages": 9,
+      "title": "Cómo adaptar lo que le funciona a otro a tu propia marca",
+      "desc": "Entender la intención detrás de cada formato, la calidad como idea y no como edición, y tus sistemas como contenido.",
+      "sections": [
+        "La intención",
+        "El ejemplo",
+        "Simplificar",
+        "Tus sistemas",
+        "El ritmo",
+        "Siete días"
+      ],
+      "resuelve": [
+        "Copiás la intención de un formato ajeno, no la forma.",
+        "Rompés la misma objeción con ejemplos de tu mundo y con tu voz.",
+        "Simplificás un sistema ajeno hasta que lo podés sostener cuatro semanas.",
+        "Convertís tus propios sistemas en videos, tendencias y oferta.",
+        "Calibrás el ritmo: menos videos, mejor pensados, y el volumen en reels."
+      ],
+      "funciona": "A los treinta días tenés un sistema propio grabado, dos videos pensados y reels todas las semanas, sin haber copiado el formato de nadie. Si algo copiado sigue sin funcionar, volvé al día 01: todavía estás en la capa de la forma.",
+      "problemas": [
+        "copio y no me funciona",
+        "adaptar referentes",
+        "mi marca se parece a otra",
+        "copiar formatos",
+        "cuántos videos hacer",
+        "ritmo de publicación",
+        "calidad de edición"
+      ]
+    }
+  ]
+}
