@@ -14,7 +14,6 @@
 <style>
 @font-face{font-family:"Helvetica Now Display";font-weight:500;font-style:normal;font-display:swap;src:url("vendor/fuentes/helvetica-now-display-500.otf") format("opentype")}
 @font-face{font-family:"Helvetica Now Display";font-weight:400;font-style:normal;font-display:swap;src:url("vendor/fuentes/helvetica-now-display-400.otf") format("opentype")}
-@font-face{font-family:"Hoosegow JNL";font-weight:400;font-style:normal;font-display:swap;src:url("vendor/fuentes/hoosegow-jnl-400.woff2") format("woff2")}
 /* Layout: a searchable library. Mono running head like the brandbook, one band per serie,
    playbooks open in a full-screen reader with a summary rail beside the pages. */
 :root{
@@ -26,7 +25,7 @@
   --pdf-dark:#232322; --pdf-paper:#EBE8E2; --pill-bg:#1d1c1a; --pill-fg:#F3F0E9; --pill-line:rgba(243,240,233,.14);
   --font-display:"Helvetica Now Display","Helvetica Neue",Helvetica,Arial,sans-serif;
   --font-body:"Helvetica Now Display","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --font-slab:"Hoosegow JNL","Rockwell","Roboto Slab",Georgia,serif;
+  --font-slab:"Helvetica Now Display","Helvetica Neue",Helvetica,Arial,sans-serif;
   --font-mono:"IBM Plex Mono","SFMono-Regular",Menlo,Consolas,monospace;
   --radius:4px; --gutter:max(clamp(20px,4vw,48px),env(safe-area-inset-left,0px)); --gutter-r:max(clamp(20px,4vw,48px),env(safe-area-inset-right,0px));
   color-scheme:dark;
@@ -74,7 +73,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero-lede{font-size:clamp(17px,1.6vw,21px);line-height:1.4;color:var(--muted);max-width:58ch;margin:0}
 .hero-side{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:24px;row-gap:30px;border-left:1px solid var(--line);padding-left:40px;align-self:center}
 .stat{display:contents}
-.stat b{font-family:var(--font-slab);font-weight:400;font-size:clamp(34px,3.6vw,48px);line-height:.9;color:var(--fg);font-variant-numeric:tabular-nums;white-space:nowrap;min-width:2.2em}
+.stat b{font-family:var(--font-slab);font-weight:500;letter-spacing:-.02em;font-size:clamp(34px,3.6vw,48px);line-height:.9;color:var(--fg);white-space:nowrap;min-width:2.2em}
 .stat span{font-size:15px;line-height:1.35;color:var(--muted);min-width:0}
 .stat span strong{color:var(--fg);font-weight:500;display:block}
 
@@ -104,12 +103,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .index .wrap{display:flex;flex-wrap:wrap;gap:12px 10px}
 .chip{display:inline-flex;align-items:baseline;gap:8px;text-decoration:none;font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 10px}
 .chip:hover{color:var(--fg);border-color:var(--muted)}
-.chip::before{content:attr(data-n);font-family:var(--font-slab);font-size:15px;color:var(--red)}
+.chip::before{content:attr(data-n);font-family:var(--font-slab);font-weight:500;font-size:14px;color:var(--red)}
 
 /* series bands */
 .serie{padding-block:80px 16px;scroll-margin-top:160px}
 .serie-head{display:grid;grid-template-columns:auto 1fr auto;align-items:end;align-items:last baseline;gap:18px 20px;padding-bottom:24px;margin-bottom:32px;border-bottom:1px solid var(--line)}
-.serie-num{font-family:var(--font-slab);font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--red);font-variant-numeric:tabular-nums}
+.serie-num{font-family:var(--font-slab);font-weight:500;letter-spacing:-.02em;font-size:clamp(22px,2.6vw,32px);line-height:1.1;color:var(--red)}
 .serie-meta{display:grid;gap:6px;min-width:0}
 .serie-title{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,2.6vw,32px);line-height:1.1;letter-spacing:-.02em;margin:0;text-wrap:balance}
 .serie-count{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
@@ -285,7 +284,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .hero{padding-block:44px 36px}
   .hero h1{margin-bottom:20px}
   .hero-side{padding-top:22px}
-  .stat b{font-size:26px}
+  .stat b{font-size:32px}
   .stat span{font-size:13px}
   .stat>span>span{display:none}
   .toolbar .wrap{padding-block:14px}
