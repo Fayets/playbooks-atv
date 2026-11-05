@@ -161,60 +161,62 @@ html{scroll-behavior:smooth}
   .close{padding-top:88px}
 }
 
-/* optin: sale del mismo botón */
-.opt{order:2;margin-top:28px;position:relative;display:inline-block;z-index:4;--fw:min(540px,calc(100cqw - 40px))}
+/* optin: el botón se abre hacia abajo con todo a la vista */
+.opt{order:2;margin-top:28px;position:relative;display:inline-block;z-index:4;--fw:min(440px,calc(100cqw - 40px));--bh:68px;--br:34px}
+.opt.open{z-index:8}
 .inside .opt,.close .opt{margin-top:40px}
 .opt .btn{margin-top:0;transition:transform .15s ease,background .15s ease,opacity .18s ease}
 .opt.open .btn{opacity:0;pointer-events:none}
-.opt-f{position:absolute;top:0;left:50%;width:var(--fw);height:68px;margin:0 0 0 calc(var(--fw) / -2);background:var(--accent,#FF2518);color:#F3F0E9;border-radius:34px;overflow:hidden;clip-path:inset(0 calc((100% - var(--bw,320px)) / 2) round 34px);opacity:0;visibility:hidden;transition:clip-path .55s cubic-bezier(.22,1,.36,1),opacity .1s ease,visibility 0s linear .55s}
-.opt.open .opt-f{clip-path:inset(0 0 round 34px);opacity:1;visibility:visible;transition:clip-path .55s cubic-bezier(.22,1,.36,1),opacity .06s ease}
-.inside .opt-f{left:0;margin-left:0;clip-path:inset(0 calc(100% - var(--bw,320px)) 0 0 round 34px)}
-.opt-s{position:absolute;inset:0;display:flex;align-items:center;gap:10px;padding:0 8px 0 30px;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .22s ease,transform .38s cubic-bezier(.22,1,.36,1)}
-.opt-s.on{opacity:1;transform:none;pointer-events:auto;transition-delay:.1s}
-.opt-s.ido{transform:translateY(-16px)}
-.opt-s input{flex:1;min-width:0;height:100%;background:none;border:0;outline:0;padding:0;color:#F3F0E9;caret-color:#F3F0E9;font:600 20px 'Inter Tight','Inter',system-ui,sans-serif;letter-spacing:-.005em}
-.opt-s input::placeholder{color:#F3F0E9;opacity:.92}
-.opt-s input:-webkit-autofill{-webkit-text-fill-color:#F3F0E9;box-shadow:inset 0 0 0 60px var(--accent,#FF2518)}
-.opt-go{flex:none;width:52px;height:52px;border:0;border-radius:50%;background:#F3F0E9;color:var(--accent,#FF2518);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;line-height:1;padding:0;transition:transform .15s ease}
-.opt-go:hover{transform:translateX(2px)}
-.opt-s.msg{justify-content:center;padding:0 28px;font-family:'Inter Tight','Inter',sans-serif;font-weight:700;font-size:18px;line-height:1.15;text-align:center;letter-spacing:-.005em}
-.opt-s.msg svg{flex:none;display:block}
-.opt-c{stroke-dasharray:76;stroke-dashoffset:76}
-.opt-k{stroke-dasharray:24;stroke-dashoffset:24}
-.opt-s.on .opt-c{animation:opt-d .42s cubic-bezier(.65,0,.35,1) .1s forwards}
-.opt-s.on .opt-k{animation:opt-d .26s cubic-bezier(.65,0,.35,1) .42s forwards}
-@keyframes opt-d{to{stroke-dashoffset:0}}
-.opt.mal{animation:opt-n .32s ease}
-@keyframes opt-n{25%{transform:translateX(-7px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}}
-.opt-t{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.micro{transition:opacity .16s ease;font-family:'Inter Tight','Inter',system-ui,sans-serif;font-size:15px;font-weight:500;letter-spacing:0;text-transform:none}
-.note{transition:opacity .2s ease}
-.stage:has(.opt.open) .note{opacity:0}
-.opt-s[data-paso=tel]{padding-left:12px}
-.opt-pais{flex:none;height:48px;display:flex;align-items:center;gap:7px;padding:0 10px 0 12px;border:0;border-radius:24px;background:rgba(36,35,33,.16);color:#F3F0E9;cursor:pointer;font:600 17px 'Inter Tight','Inter',system-ui,sans-serif;transition:background .15s ease}
-.opt-pais:hover{background:rgba(36,35,33,.26)}
+.opt-f{position:absolute;top:0;left:50%;width:var(--fw);margin:0 0 0 calc(var(--fw) / -2);box-sizing:border-box;padding:16px;display:grid;gap:10px;background:var(--accent,#FF2518);color:#F3F0E9;border-radius:26px;clip-path:inset(0 calc((100% - var(--bw,320px)) / 2) calc(100% - var(--bh)) round var(--br));opacity:0;visibility:hidden;transition:clip-path .5s cubic-bezier(.22,1,.36,1),opacity .1s ease,visibility 0s linear .5s}
+.opt.open .opt-f{clip-path:inset(0 round 26px);opacity:1;visibility:visible;transition:clip-path .5s cubic-bezier(.22,1,.36,1),opacity .06s ease}
+.opt.abierto .opt-f{clip-path:none;box-shadow:0 24px 50px rgba(36,35,33,.28)}
+.inside .opt-f{left:0;margin-left:0;clip-path:inset(0 calc(100% - var(--bw,320px)) calc(100% - var(--bh)) 0 round var(--br))}
+.opt-f>:not(.opt-ok):not(.opt-t){opacity:0;transform:translateY(10px);transition:opacity .2s ease,transform .32s cubic-bezier(.22,1,.36,1)}
+.opt.open .opt-f>:not(.opt-ok):not(.opt-t){opacity:1;transform:none}
+.opt.open .opt-f>:nth-child(2){transition-delay:.1s}
+.opt.open .opt-f>:nth-child(3){transition-delay:.15s}
+.opt.open .opt-f>:nth-child(4){transition-delay:.2s}
+.opt.open .opt-f>:nth-child(5){transition-delay:.25s}
+.opt-i,.opt-tel{height:54px;box-sizing:border-box;width:100%;background:#FFFDF9;color:#242321;border:0;border-radius:14px;transition:box-shadow .15s ease}
+.opt-i:focus,.opt-tel:focus-within{box-shadow:0 0 0 3px rgba(243,240,233,.55)}
+.opt-i,.opt-tel input{outline:0;font:500 17px 'Inter Tight','Inter',system-ui,sans-serif;color:#242321}
+.opt-i{padding:0 16px}
+.opt-i::placeholder,.opt-tel input::placeholder{color:#6f6a63;opacity:1}
+.opt-tel{position:relative;display:flex;align-items:center}
+.opt-tel input{flex:1;min-width:0;height:100%;border:0;background:none;padding:0 16px 0 12px}
+.opt-pais{flex:none;height:100%;display:flex;align-items:center;gap:7px;padding:0 12px 0 14px;border:0;border-right:1px solid rgba(36,35,33,.14);background:none;color:#242321;cursor:pointer;font:600 16px 'Inter Tight','Inter',system-ui,sans-serif}
 .opt-pais img,.opt-l img{flex:none;display:block;width:24px;height:16px;object-fit:cover;border-radius:2px}
 .opt-pais svg{display:block;transition:transform .2s ease}
 .opt.lista .opt-pais svg{transform:rotate(180deg)}
-.opt-l{position:absolute;left:calc(50% - var(--fw) / 2 + 8px);top:calc(100% + 10px);width:320px;margin:0;padding:6px;list-style:none;background:#FFFDF9;color:#242321;border:1px solid rgba(36,35,33,.16);border-radius:16px;box-shadow:0 20px 44px rgba(36,35,33,.22);max-height:286px;overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .16s ease,transform .22s cubic-bezier(.22,1,.36,1),visibility 0s linear .22s;z-index:6;box-sizing:border-box}
+.opt-l{position:absolute;left:0;right:0;top:calc(100% + 6px);margin:0;padding:6px;list-style:none;background:#FFFDF9;color:#242321;border:1px solid rgba(36,35,33,.16);border-radius:14px;box-shadow:0 20px 44px rgba(36,35,33,.24);max-height:250px;overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s ease,transform .22s cubic-bezier(.22,1,.36,1),visibility 0s linear .22s;z-index:10;box-sizing:border-box}
 .opt.lista .opt-l{opacity:1;visibility:visible;transform:none;transition:opacity .16s ease,transform .22s cubic-bezier(.22,1,.36,1)}
-.inside .opt-l{left:8px}
 .opt-l button{width:100%;display:flex;align-items:center;gap:12px;padding:10px 12px;border:0;border-radius:10px;background:none;color:inherit;cursor:pointer;text-align:left;font:500 15px 'Inter',system-ui,sans-serif}
 .opt-l button:hover,.opt-l button:focus-visible,.opt-l button[aria-selected=true]{background:#F3F0E9;outline:0}
 .opt-l span{flex:1;min-width:0}
 .opt-l small{font:500 14px 'Inter Tight','Inter',sans-serif;color:#5f5c57}
+.opt-go{height:56px;display:flex;align-items:center;justify-content:center;gap:14px;border:0;border-radius:999px;background:#242321;color:#F3F0E9;cursor:pointer;font:700 17px 'Inter Tight','Inter',sans-serif;letter-spacing:.02em;text-transform:uppercase}
+.opt-go:hover{background:#3a3835}
+.opt-h{margin:2px 6px 0;text-align:center;font:500 14px/1.35 'Inter Tight','Inter',system-ui,sans-serif;color:#F3F0E9}
+.opt-ok{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;text-align:center;font:700 20px/1.2 'Inter Tight','Inter',sans-serif;opacity:0;pointer-events:none;transition:opacity .22s ease .12s}
+.opt.fin .opt-f>:not(.opt-ok):not(.opt-t){opacity:0;pointer-events:none;transition-delay:0s}
+.opt.fin .opt-ok{opacity:1}
+.opt-c{stroke-dasharray:124;stroke-dashoffset:124}
+.opt-k{stroke-dasharray:36;stroke-dashoffset:36}
+.opt.fin .opt-c{animation:opt-d .42s cubic-bezier(.65,0,.35,1) .15s forwards}
+.opt.fin .opt-k{animation:opt-d .26s cubic-bezier(.65,0,.35,1) .47s forwards}
+@keyframes opt-d{to{stroke-dashoffset:0}}
+.opt.mal{animation:opt-n .32s ease}
+@keyframes opt-n{25%{transform:translateX(-7px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}}
+.opt-t{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.micro{font-family:'Inter Tight','Inter',system-ui,sans-serif;font-size:15px;font-weight:500;letter-spacing:0;text-transform:none}
+.note{transition:opacity .2s ease}
+.stage:has(.opt.open) .note{opacity:0}
 @container (max-width: 720px){
-  .opt{display:block;width:100%;--fw:100%}
-  .opt-f,.inside .opt-f{height:64px;left:0;margin-left:0;clip-path:inset(0 round 32px)}
-  .opt.open .opt-f{clip-path:inset(0 round 32px)}
-  .opt-s{padding:0 6px 0 24px}
-  .opt-s[data-paso=tel]{padding-left:8px}
-  .opt-pais{height:46px;font-size:16px;padding:0 8px 0 10px;gap:6px}
-  .opt-l,.inside .opt-l{left:0;width:100%}
-  .opt-s input{font-size:18px}
-  .opt-s.msg{padding:0 20px;font-size:15px}
+  .opt{display:block;width:100%;--fw:100%;--bh:64px;--br:32px}
+  .opt-f,.inside .opt-f{left:0;margin-left:0;padding:14px;clip-path:inset(0 0 calc(100% - var(--bh)) round var(--br))}
+  .opt-i,.opt-tel input{font-size:16px}
 }
-@media (prefers-reduced-motion:reduce){.opt-f,.opt.open .opt-f,.opt-s{transition:none}.opt.mal{animation:none}.opt-c,.opt-k{stroke-dashoffset:0;animation:none!important}}
+@media (prefers-reduced-motion:reduce){.opt-f,.opt.open .opt-f,.opt-f>*{transition:none!important}.opt.mal{animation:none}.opt-c,.opt-k{stroke-dashoffset:0;animation:none!important}}
 </style>
 </head>
 <body>
@@ -377,7 +379,6 @@ html{scroll-behavior:smooth}
 <script>
 (function () {
   var DESTINO = 'https://recursos.atvos.io/', ORIGENES = ['hero', 'adentro', 'cierre'];
-  var CHECK = '<svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="opt-c" cx="15" cy="15" r="12"></circle><path class="opt-k" d="M9.5 15.5l4 4 7-8"></path></svg>';
   var PAISES = [['ar','Argentina','54'],['mx','México','52'],['co','Colombia','57'],['cl','Chile','56'],['pe','Perú','51'],['uy','Uruguay','598'],['py','Paraguay','595'],['bo','Bolivia','591'],['ec','Ecuador','593'],['ve','Venezuela','58'],['es','España','34'],['us','Estados Unidos','1'],['do','Rep. Dominicana','1'],['cr','Costa Rica','506'],['gt','Guatemala','502'],['pa','Panamá','507']];
   var ZONAS = { Mexico: 'mx', Bogota: 'co', Santiago: 'cl', Lima: 'pe', Montevideo: 'uy', Asuncion: 'py', La_Paz: 'bo', Guayaquil: 'ec', Caracas: 've', Madrid: 'es', New_York: 'us', Chicago: 'us', Los_Angeles: 'us', Santo_Domingo: 'do', Costa_Rica: 'cr', Guatemala: 'gt', Panama: 'pa' };
   function paisInicial() {
@@ -400,26 +401,26 @@ html{scroll-behavior:smooth}
     caja.className = 'opt';
     btn.parentNode.insertBefore(caja, btn);
     caja.appendChild(btn);
-    var micro = caja.nextElementSibling, textoMicro = micro ? micro.textContent : '';
     var form = document.createElement('form');
     form.className = 'opt-f';
     form.noValidate = true;
     form.innerHTML =
       '<input class="opt-t" name="sitio" tabindex="-1" autocomplete="off" aria-hidden="true">' +
-      '<div class="opt-s" data-paso="mail"><input type="email" name="email" inputmode="email" autocomplete="email" placeholder="Tu mail" aria-label="Tu mail"><button class="opt-go" type="submit" aria-label="Seguir">→</button></div>' +
-      '<div class="opt-s msg" data-paso="ok">' + CHECK + '<span>Listo</span></div>' +
-      '<div class="opt-s" data-paso="tel"><button class="opt-pais" type="button" aria-haspopup="listbox" aria-expanded="false"><img alt=""><b></b><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg></button><input type="tel" name="tel" inputmode="tel" autocomplete="tel-national" placeholder="Tu WhatsApp" aria-label="Tu WhatsApp"><button class="opt-go" type="submit" aria-label="Enviar">→</button></div>' +
-      '<div class="opt-s msg" data-paso="fin">' + CHECK + '<span>Es solo para enviarte más recursos. Nada más.</span></div>';
+      '<input class="opt-i" type="email" name="email" inputmode="email" autocomplete="email" placeholder="Tu mail" aria-label="Tu mail">' +
+      '<div class="opt-tel"><button class="opt-pais" type="button" aria-haspopup="listbox" aria-expanded="false"><img alt=""><b></b><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg></button><input type="tel" name="tel" inputmode="tel" autocomplete="tel-national" placeholder="Tu WhatsApp" aria-label="Tu WhatsApp"><ul class="opt-l" role="listbox"></ul></div>' +
+      '<button class="opt-go" type="submit">Ingresar a recursos <span aria-hidden="true">→</span></button>' +
+      '<p class="opt-h" aria-live="polite"></p>' +
+      '<div class="opt-ok" aria-live="polite"><svg width="46" height="46" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="opt-c" cx="23" cy="23" r="19.5"></circle><path class="opt-k" d="M14.5 23.5l6 6 11-12.5"></path></svg><span>Listo, te llevamos a los recursos</span></div>';
     caja.appendChild(form);
 
-    var lista = document.createElement('ul');
-    lista.className = 'opt-l';
-    lista.setAttribute('role', 'listbox');
+    var AYUDA = 'Para enviarte próximos recursos. El WhatsApp, por si no te llegan al mail.';
+    var mail = form.elements.email, tel = form.elements.tel, ayuda = form.querySelector('.opt-h');
+    var chip = form.querySelector('.opt-pais'), lista = form.querySelector('.opt-l'), pais = null, fin = false, reloj = 0;
+    ayuda.textContent = AYUDA;
     lista.innerHTML = PAISES.map(function (p) {
       return '<li><button type="button" role="option" data-pais="' + p[0] + '"><img loading="lazy" src="assets/banderas/' + p[0] + '.png" alt=""><span>' + p[1] + '</span><small>+' + p[2] + '</small></button></li>';
     }).join('');
-    caja.appendChild(lista);
-    var chip = form.querySelector('.opt-pais'), pais = null;
+
     function elegir(iso) {
       pais = PAISES.filter(function (p) { return p[0] === iso; })[0];
       chip.querySelector('img').src = 'assets/banderas/' + iso + '.png';
@@ -431,30 +432,6 @@ html{scroll-behavior:smooth}
       caja.classList.toggle('lista', abrir);
       chip.setAttribute('aria-expanded', abrir ? 'true' : 'false');
     }
-    elegir(paisInicial());
-    chip.addEventListener('click', function (e) {
-      e.stopPropagation();
-      mostrarLista(!caja.classList.contains('lista'));
-    });
-    lista.addEventListener('click', function (e) {
-      var b = e.target.closest('button');
-      if (!b) { return; }
-      e.stopPropagation();
-      elegir(b.getAttribute('data-pais'));
-      mostrarLista(false);
-      tel.focus({ preventScroll: true });
-    });
-    document.addEventListener('click', function (e) {
-      if (!caja.contains(e.target)) { mostrarLista(false); }
-    });
-    caja.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && caja.classList.contains('lista')) { e.stopPropagation(); mostrarLista(false); chip.focus(); }
-    });
-
-    var pasos = Array.prototype.slice.call(form.querySelectorAll('.opt-s'));
-    var mail = form.querySelector('[name=email]'), tel = form.querySelector('[name=tel]');
-    var paso = null, correo = '';
-
     function completo(valor) {
       if (valor.trim().charAt(0) === '+') { return '+' + valor.replace(/\D/g, ''); }
       var local = valor.replace(/\D/g, '').replace(/^0+/, '');
@@ -462,68 +439,65 @@ html{scroll-behavior:smooth}
       if (pais[0] === 'ar' && local.charAt(0) !== '9') { local = '9' + local; }
       return '+' + pais[2] + local;
     }
-    function aviso(texto) {
-      if (!micro) { return; }
-      micro.style.opacity = 0;
-      setTimeout(function () { micro.textContent = texto; micro.style.opacity = ''; }, 170);
-    }
-    function ir(nombre) {
-      var visto = false;
-      pasos.forEach(function (p) {
-        var este = p.getAttribute('data-paso') === nombre;
-        p.classList.toggle('on', este);
-        p.classList.toggle('ido', !este && !visto);
-        if (este) { visto = true; }
-        var campo = p.querySelector('input');
-        if (campo) { campo.disabled = !este; }
-      });
-      paso = nombre;
-    }
-    function mal(texto) {
+    function mal(texto, campo) {
       caja.classList.remove('mal');
       void caja.offsetWidth;
       caja.classList.add('mal');
-      aviso(texto);
+      ayuda.textContent = texto;
+      campo.focus();
     }
     function cerrar() {
-      caja.classList.remove('open');
-      aviso(textoMicro);
+      clearTimeout(reloj);
+      mostrarLista(false);
+      caja.classList.remove('open', 'abierto');
       btn.focus({ preventScroll: true });
     }
+
+    elegir(paisInicial());
+    form.addEventListener('input', function () { ayuda.textContent = AYUDA; });
 
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       caja.style.setProperty('--bw', btn.offsetWidth + 'px');
       caja.classList.add('open');
-      ir(correo ? 'tel' : 'mail');
-      (correo ? tel : mail).focus({ preventScroll: true });
-      aviso(correo ? 'Ahora tu WhatsApp, por si no te llegan al mail' : 'Dejá tu mail para enviarte próximos recursos');
+      mail.focus({ preventScroll: true });
+      reloj = setTimeout(function () {
+        caja.classList.add('abierto');
+        form.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }, 520);
     });
-
-    form.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && (paso === 'mail' || paso === 'tel')) { cerrar(); }
+    chip.addEventListener('click', function () { mostrarLista(!caja.classList.contains('lista')); });
+    lista.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) { return; }
+      elegir(b.getAttribute('data-pais'));
+      mostrarLista(false);
+      tel.focus({ preventScroll: true });
+    });
+    document.addEventListener('click', function (e) {
+      if (caja.contains(e.target) || fin) { return; }
+      if (caja.classList.contains('open')) { cerrar(); }
+    });
+    caja.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape' || fin) { return; }
+      if (caja.classList.contains('lista')) { mostrarLista(false); chip.focus(); } else if (caja.classList.contains('open')) { cerrar(); }
     });
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (paso === 'mail') {
-        var valor = mail.value.trim();
-        if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(valor)) { mal('Revisá el mail'); mail.focus(); return; }
-        correo = valor;
-        enviar('', { email: valor, origen: ORIGENES[i], sitio: form.elements.sitio.value });
-        ir('ok');
-        aviso('Ahora tu WhatsApp, por si no te llegan al mail');
-        setTimeout(function () { ir('tel'); tel.focus({ preventScroll: true }); }, 1000);
-      } else if (paso === 'tel') {
-        var numero = completo(tel.value), digitos = numero.replace(/\D/g, '');
-        if (digitos.length < 8 || digitos.length > 15 || tel.value.replace(/\D/g, '').length < 6) { mal('Revisá el número'); tel.focus(); return; }
-        mostrarLista(false);
-        enviar('/telefono', { email: correo, telefono: numero });
-        try { localStorage.setItem('atv_optin', '1'); } catch (err) {}
-        ir('fin');
-        aviso('Te llevamos a los recursos');
-        setTimeout(function () { location.href = DESTINO; }, 2600);
-      }
+      if (fin) { return; }
+      var correo = mail.value.trim(), numero = completo(tel.value), digitos = numero.replace(/\D/g, '');
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(correo)) { mal('Revisá el mail', mail); return; }
+      if (digitos.length < 8 || digitos.length > 15 || tel.value.replace(/\D/g, '').length < 6) { mal('Revisá el WhatsApp', tel); return; }
+      fin = true;
+      mostrarLista(false);
+      caja.classList.add('fin');
+      try { localStorage.setItem('atv_optin', '1'); } catch (err) {}
+      var guardado = enviar('', { email: correo, origen: ORIGENES[i], sitio: form.elements.sitio.value }).then(function () {
+        return enviar('/telefono', { email: correo, telefono: numero });
+      });
+      var espera = new Promise(function (ok) { setTimeout(ok, 1700); });
+      Promise.all([guardado, espera]).then(function () { location.href = DESTINO; });
     });
   });
 })();
