@@ -1,0 +1,11 @@
+services:
+  playbook-api:
+    build: .
+    container_name: playbook-api
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8146:8000"
+    environment:
+      LEADS_DB: /datos/leads.sqlite
+    volumes:
+      - /opt/playbook-datos:/datos

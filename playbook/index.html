@@ -160,6 +160,45 @@ html{scroll-behavior:smooth}
   .foot{flex-wrap:wrap;justify-content:center;text-align:center}
   .close{padding-top:88px}
 }
+
+/* optin: sale del mismo botón */
+.opt{order:2;margin-top:28px;position:relative;display:inline-block;z-index:4;--fw:min(540px,calc(100cqw - 40px))}
+.inside .opt,.close .opt{margin-top:40px}
+.opt .btn{margin-top:0;transition:transform .15s ease,background .15s ease,opacity .18s ease}
+.opt.open .btn{opacity:0;pointer-events:none}
+.opt-f{position:absolute;top:0;left:50%;width:var(--fw);height:68px;margin:0 0 0 calc(var(--fw) / -2);background:var(--accent,#FF2518);color:#F3F0E9;border-radius:34px;overflow:hidden;clip-path:inset(0 calc((100% - var(--bw,320px)) / 2) round 34px);opacity:0;visibility:hidden;transition:clip-path .55s cubic-bezier(.22,1,.36,1),opacity .1s ease,visibility 0s linear .55s}
+.opt.open .opt-f{clip-path:inset(0 0 round 34px);opacity:1;visibility:visible;transition:clip-path .55s cubic-bezier(.22,1,.36,1),opacity .06s ease}
+.inside .opt-f{left:0;margin-left:0;clip-path:inset(0 calc(100% - var(--bw,320px)) 0 0 round 34px)}
+.opt-s{position:absolute;inset:0;display:flex;align-items:center;gap:10px;padding:0 8px 0 30px;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .22s ease,transform .38s cubic-bezier(.22,1,.36,1)}
+.opt-s.on{opacity:1;transform:none;pointer-events:auto;transition-delay:.1s}
+.opt-s.ido{transform:translateY(-16px)}
+.opt-s input{flex:1;min-width:0;height:100%;background:none;border:0;outline:0;padding:0;color:#F3F0E9;caret-color:#F3F0E9;font:500 18px 'Inter',system-ui,sans-serif}
+.opt-s input::placeholder{color:rgba(243,240,233,.78)}
+.opt-s input:-webkit-autofill{-webkit-text-fill-color:#F3F0E9;box-shadow:inset 0 0 0 60px var(--accent,#FF2518)}
+.opt-go{flex:none;width:52px;height:52px;border:0;border-radius:50%;background:#F3F0E9;color:var(--accent,#FF2518);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;line-height:1;padding:0;transition:transform .15s ease}
+.opt-go:hover{transform:translateX(2px)}
+.opt-s.msg{justify-content:center;padding:0 28px;font-family:'Inter Tight','Inter',sans-serif;font-weight:700;font-size:18px;line-height:1.15;text-align:center;letter-spacing:-.005em}
+.opt-s.msg svg{flex:none;display:block}
+.opt-c{stroke-dasharray:76;stroke-dashoffset:76}
+.opt-k{stroke-dasharray:24;stroke-dashoffset:24}
+.opt-s.on .opt-c{animation:opt-d .42s cubic-bezier(.65,0,.35,1) .1s forwards}
+.opt-s.on .opt-k{animation:opt-d .26s cubic-bezier(.65,0,.35,1) .42s forwards}
+@keyframes opt-d{to{stroke-dashoffset:0}}
+.opt.mal{animation:opt-n .32s ease}
+@keyframes opt-n{25%{transform:translateX(-7px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}}
+.opt-t{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.micro{transition:opacity .16s ease}
+.note{transition:opacity .2s ease}
+.stage:has(.opt.open) .note{opacity:0}
+@container (max-width: 720px){
+  .opt{display:block;width:100%;--fw:100%}
+  .opt-f,.inside .opt-f{height:64px;left:0;margin-left:0;clip-path:inset(0 round 32px)}
+  .opt.open .opt-f{clip-path:inset(0 round 32px)}
+  .opt-s{padding:0 6px 0 24px}
+  .opt-s input{font-size:16px}
+  .opt-s.msg{padding:0 20px;font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.opt-f,.opt.open .opt-f,.opt-s{transition:none}.opt.mal{animation:none}.opt-c,.opt-k{stroke-dashoffset:0;animation:none!important}}
 </style>
 </head>
 <body>
@@ -210,7 +249,7 @@ html{scroll-behavior:smooth}
       </div>
 
       <a class="btn" href="https://recursos.atvos.io/">Ingresar a recursos <span class="arr">→</span></a>
-      <div class="mono micro">Sin formularios · Sin trucos · Acceso directo</div>
+      <div class="mono micro">Sin spam · Sin trucos · Acceso directo</div>
     </div>
   </div>
 </section>
@@ -245,7 +284,7 @@ html{scroll-behavior:smooth}
           <li><span class="n">18</span><span>+$100k con infoproductos en 2026</span></li>
         </ol>
         <a class="btn" href="https://recursos.atvos.io/">Ingresar a recursos <span class="arr">→</span></a>
-      <div class="mono micro">Sin formularios · Sin trucos · Acceso directo</div>
+      <div class="mono micro">Sin spam · Sin trucos · Acceso directo</div>
       </div>
 
       <div class="prev">
@@ -296,7 +335,7 @@ html{scroll-behavior:smooth}
     <h2>Si ya viste el video, no hay mucho más que explicar.</h2>
     <p class="lead">Entrá, elegí el playbook del problema que tenés hoy y aplicalo esta semana.</p>
     <a class="btn" href="https://recursos.atvos.io/">Ingresar a recursos <span class="arr">→</span></a>
-      <div class="mono micro">Sin formularios · Sin trucos · Acceso directo</div>
+      <div class="mono micro">Sin spam · Sin trucos · Acceso directo</div>
     <footer class="foot">
       <img src="assets/logo-atv-dark.png" alt="ATV">
       <span class="mono">ATV · Aumenta tu valor 2026</span>
@@ -316,6 +355,104 @@ html{scroll-behavior:smooth}
   });
   v.addEventListener('ended', function () {
     box.classList.remove('on'); v.controls = false; v.load();
+  });
+})();
+</script>
+<script>
+(function () {
+  var DESTINO = 'https://recursos.atvos.io/', ORIGENES = ['hero', 'adentro', 'cierre'];
+  var CHECK = '<svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="opt-c" cx="15" cy="15" r="12"></circle><path class="opt-k" d="M9.5 15.5l4 4 7-8"></path></svg>';
+  var listo = false;
+  try { listo = localStorage.getItem('atv_optin') === '1'; } catch (e) {}
+  if (listo) { return; }
+
+  function enviar(ruta, datos) {
+    return fetch('/api/leads' + ruta, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos), keepalive: true }).catch(function () {});
+  }
+
+  document.querySelectorAll('a.btn').forEach(function (btn, i) {
+    var caja = document.createElement('div');
+    caja.className = 'opt';
+    btn.parentNode.insertBefore(caja, btn);
+    caja.appendChild(btn);
+    var micro = caja.nextElementSibling, textoMicro = micro ? micro.textContent : '';
+    var form = document.createElement('form');
+    form.className = 'opt-f';
+    form.noValidate = true;
+    form.innerHTML =
+      '<input class="opt-t" name="sitio" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+      '<div class="opt-s" data-paso="mail"><input type="email" name="email" inputmode="email" autocomplete="email" placeholder="Tu mejor mail" aria-label="Tu mail"><button class="opt-go" type="submit" aria-label="Seguir">→</button></div>' +
+      '<div class="opt-s msg" data-paso="ok">' + CHECK + '<span>Listo</span></div>' +
+      '<div class="opt-s" data-paso="tel"><input type="tel" name="tel" inputmode="tel" autocomplete="tel" placeholder="Tu WhatsApp, con código de país" aria-label="Tu WhatsApp"><button class="opt-go" type="submit" aria-label="Enviar">→</button></div>' +
+      '<div class="opt-s msg" data-paso="fin">' + CHECK + '<span>Es solo para enviarte más recursos. Nada más.</span></div>';
+    caja.appendChild(form);
+
+    var pasos = Array.prototype.slice.call(form.querySelectorAll('.opt-s'));
+    var mail = form.querySelector('[name=email]'), tel = form.querySelector('[name=tel]');
+    var paso = null, correo = '';
+
+    function aviso(texto) {
+      if (!micro) { return; }
+      micro.style.opacity = 0;
+      setTimeout(function () { micro.textContent = texto; micro.style.opacity = ''; }, 170);
+    }
+    function ir(nombre) {
+      var visto = false;
+      pasos.forEach(function (p) {
+        var este = p.getAttribute('data-paso') === nombre;
+        p.classList.toggle('on', este);
+        p.classList.toggle('ido', !este && !visto);
+        if (este) { visto = true; }
+        var campo = p.querySelector('input');
+        if (campo) { campo.disabled = !este; }
+      });
+      paso = nombre;
+    }
+    function mal(texto) {
+      caja.classList.remove('mal');
+      void caja.offsetWidth;
+      caja.classList.add('mal');
+      aviso(texto);
+    }
+    function cerrar() {
+      caja.classList.remove('open');
+      aviso(textoMicro);
+      btn.focus({ preventScroll: true });
+    }
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      caja.style.setProperty('--bw', btn.offsetWidth + 'px');
+      caja.classList.add('open');
+      ir(correo ? 'tel' : 'mail');
+      (correo ? tel : mail).focus({ preventScroll: true });
+      aviso(correo ? 'Te escribimos solo por los recursos' : 'Dejá tu mail y entrás');
+    });
+
+    form.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && (paso === 'mail' || paso === 'tel')) { cerrar(); }
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (paso === 'mail') {
+        var valor = mail.value.trim();
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(valor)) { mal('Revisá el mail'); mail.focus(); return; }
+        correo = valor;
+        enviar('', { email: valor, origen: ORIGENES[i], sitio: form.elements.sitio.value });
+        ir('ok');
+        aviso('Ahora tu WhatsApp');
+        setTimeout(function () { ir('tel'); tel.focus({ preventScroll: true }); }, 1000);
+      } else if (paso === 'tel') {
+        var digitos = tel.value.replace(/\D/g, '');
+        if (digitos.length < 8 || digitos.length > 15) { mal('Revisá el número'); tel.focus(); return; }
+        enviar('/telefono', { email: correo, telefono: tel.value });
+        try { localStorage.setItem('atv_optin', '1'); } catch (err) {}
+        ir('fin');
+        aviso('Te llevamos a los recursos');
+        setTimeout(function () { location.href = DESTINO; }, 2600);
+      }
+    });
   });
 })();
 </script>
