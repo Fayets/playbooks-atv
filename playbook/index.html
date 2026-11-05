@@ -202,13 +202,8 @@ html{scroll-behavior:smooth}
         </div>
       </div>
 
-      <!-- VIDEO: pegá acá la URL de embed (YouTube: https://www.youtube.com/embed/ID?autoplay=1 · Loom: https://www.loom.com/embed/ID?autoplay=1 · Vimeo: https://player.vimeo.com/video/ID?autoplay=1) -->
-      <div class="video" id="video" data-embed="https://www.loom.com/embed/11d9ba220ba34ea492b6b0f90b8961d6?autoplay=1">
-        <span class="mono v-tag">Video · 2 min</span>
-        <span class="mono v-dur">2:00</span>
-        <img class="v-logo" src="assets/logo-aumenta-light.png" alt="">
-        <button class="play" type="button" aria-label="Reproducir el video de cómo usar los recursos"><svg width="34" height="38" viewBox="0 0 34 38" aria-hidden="true"><path d="M4 3 L31 19 L4 35 Z" fill="#F3F0E9"></path></svg></button>
-        <div class="v-bar"><span class="mono">Cómo usar los recursos</span><span class="mono">Juan Carrizo · ATV</span></div>
+      <div class="video" id="video">
+        <iframe src="https://www.loom.com/embed/11d9ba220ba34ea492b6b0f90b8961d6?hide_owner=true&amp;hide_share=true&amp;hide_title=true&amp;hideEmbedTopBar=true" title="Cómo usar los recursos" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
 
       <a class="btn" href="https://recursos.atvos.io/">Ingresar a recursos <span class="arr">→</span></a>
@@ -310,23 +305,5 @@ html{scroll-behavior:smooth}
 </div>
 
 
-<script>
-(function () {
-  var box = document.getElementById('video');
-  var play = box.querySelector('.play');
-  function load() {
-    var src = box.getAttribute('data-embed');
-    if (!src) { return; }
-    if (box.querySelector('iframe')) { return; }
-    var f = document.createElement('iframe');
-    f.src = src;
-    f.allow = 'autoplay; fullscreen; picture-in-picture';
-    f.setAttribute('allowfullscreen', '');
-    f.title = 'Cómo usar los recursos';
-    box.appendChild(f);
-  }
-  play.addEventListener('click', load);
-})();
-</script>
 </body>
 </html>
