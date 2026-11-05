@@ -10,7 +10,7 @@
 body{margin:0;background:#F3F0E9}
 a{color:#B40210}a:hover{color:#242321}
 .page{position:relative;overflow-x:clip;container-type:inline-size;background:#F3F0E9;color:#2b2a28;font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
-.grain{position:absolute;inset:0;width:100%;height:100%;opacity:.13;mix-blend-mode:overlay;pointer-events:none;z-index:6}
+.grain{position:absolute;inset:0;background:url(assets/grain.png) 0 0/160px 160px;pointer-events:none;z-index:6}
 .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5f5c57;font-weight:500}
 .lbl{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#242321;font-weight:500;white-space:nowrap}
 .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
@@ -67,6 +67,7 @@ html{scroll-behavior:smooth}
 .note .lbl::before{content:"";display:inline-block;width:40px;height:1px;background:#242321;vertical-align:middle;margin-right:10px}
 .note svg{display:block}
 @keyframes bob{from{transform:rotate(var(--r,0deg)) translateY(0)}to{transform:rotate(var(--r,0deg)) translateY(-9px)}}
+.float,.sticker,.chip{will-change:transform}
 .still .float,.still .sticker,.still .chip{animation:none}
 @media (prefers-reduced-motion:reduce){.float,.sticker,.chip{animation:none}}
 
@@ -121,7 +122,7 @@ html{scroll-behavior:smooth}
 
 @container (max-width: 1100px){
   .floats{position:static;inset:auto;order:4;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:36px;pointer-events:auto}
-  .floats .float,.floats .chip,.floats .chip:link,.floats .chip:visited{position:static;transform:none;animation:none;width:auto;max-width:320px}
+  .floats .float,.floats .chip,.floats .chip:link,.floats .chip:visited{position:static;transform:none;animation:none;width:auto;max-width:320px;will-change:auto}
   .note,.sketches{display:none}
   .stage{padding-top:0}
   .cols{grid-template-columns:repeat(1, minmax(0, 1fr));row-gap:48px}
@@ -163,7 +164,7 @@ html{scroll-behavior:smooth}
 
 <div class="page" style="--accent: #FF2518; --blur: 6px;">
 
-<svg class="grain" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><filter id="grain-f"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#grain-f)"></rect></svg>
+<div class="grain" aria-hidden="true"></div>
 
 <section class="hero" id="top">
   <div class="wrap">
