@@ -406,7 +406,7 @@ html{scroll-behavior:smooth}
     form.noValidate = true;
     form.innerHTML =
       '<input class="opt-t" name="sitio" tabindex="-1" autocomplete="off" aria-hidden="true">' +
-      '<div class="opt-s" data-paso="mail"><input type="email" name="email" inputmode="email" autocomplete="email" placeholder="Tu mejor mail" aria-label="Tu mail"><button class="opt-go" type="submit" aria-label="Seguir">→</button></div>' +
+      '<div class="opt-s" data-paso="mail"><input type="email" name="email" inputmode="email" autocomplete="email" placeholder="Dejá tu mail" aria-label="Tu mail"><button class="opt-go" type="submit" aria-label="Seguir">→</button></div>' +
       '<div class="opt-s msg" data-paso="ok">' + CHECK + '<span>Listo</span></div>' +
       '<div class="opt-s" data-paso="tel"><button class="opt-pais" type="button" aria-haspopup="listbox" aria-expanded="false"><img alt=""><b></b><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg></button><input type="tel" name="tel" inputmode="tel" autocomplete="tel-national" placeholder="Tu WhatsApp" aria-label="Tu WhatsApp"><button class="opt-go" type="submit" aria-label="Enviar">→</button></div>' +
       '<div class="opt-s msg" data-paso="fin">' + CHECK + '<span>Es solo para enviarte más recursos. Nada más.</span></div>';
@@ -497,7 +497,7 @@ html{scroll-behavior:smooth}
       caja.classList.add('open');
       ir(correo ? 'tel' : 'mail');
       (correo ? tel : mail).focus({ preventScroll: true });
-      aviso(correo ? 'Te escribimos solo por los recursos' : 'Dejá tu mail');
+      aviso(correo ? 'Te escribimos solo por los recursos' : textoMicro);
     });
 
     form.addEventListener('keydown', function (e) {
