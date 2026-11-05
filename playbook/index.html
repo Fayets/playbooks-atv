@@ -497,7 +497,7 @@ html{scroll-behavior:smooth}
       caja.classList.add('open');
       ir(correo ? 'tel' : 'mail');
       (correo ? tel : mail).focus({ preventScroll: true });
-      aviso(correo ? 'Te escribimos solo por los recursos' : 'Dejá tu mail para enviarte próximos recursos');
+      aviso(correo ? 'Ahora tu WhatsApp, por si no te llegan al mail' : 'Dejá tu mail para enviarte próximos recursos');
     });
 
     form.addEventListener('keydown', function (e) {
@@ -512,7 +512,7 @@ html{scroll-behavior:smooth}
         correo = valor;
         enviar('', { email: valor, origen: ORIGENES[i], sitio: form.elements.sitio.value });
         ir('ok');
-        aviso('Ahora tu WhatsApp');
+        aviso('Ahora tu WhatsApp, por si no te llegan al mail');
         setTimeout(function () { ir('tel'); tel.focus({ preventScroll: true }); }, 1000);
       } else if (paso === 'tel') {
         var numero = completo(tel.value), digitos = numero.replace(/\D/g, '');
