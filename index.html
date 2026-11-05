@@ -164,6 +164,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .reader{position:fixed;inset:0;z-index:30;background:var(--bg-2);display:grid;grid-template-rows:auto minmax(0,1fr);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .rd-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:10px var(--gutter-r) 10px var(--gutter);background:var(--bg)}
 .rd-meta{display:grid;gap:2px;min-width:0}
+.rd-cta{white-space:nowrap;flex:none;margin-right:8px}
+.rd-cta-s{display:none}
 .rd-title{font-family:var(--font-display);font-weight:500;font-size:16px;line-height:1.25;letter-spacing:-.01em;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rd-actions{display:flex;align-items:center;gap:6px}
 .icon-btn{font-size:18px;display:inline-grid;place-items:center;min-width:38px;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:var(--radius);background:transparent;cursor:pointer;color:var(--fg);gap:8px;grid-auto-flow:column;font-family:var(--font-display);font-weight:500;font-size:14px}
@@ -303,6 +305,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .grid{gap:22px}
   .card-body{padding:14px 14px 16px}
   .rd-meta .eyebrow,#rd-close .lbl,.rd-pbnav{display:none!important}
+  .rd-cta{margin-right:0}
+  .rd-cta-l{display:none}
+  .rd-cta-s{display:inline}
   .rd-title{white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:14.5px;line-height:1.2}
   .pv-btn{width:40px;height:40px}
   #pv-up,#pv-down{display:none}
@@ -378,6 +383,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <h2 class="rd-title" id="rd-title"></h2>
     </div>
     <div class="rd-actions">
+      <a class="btn btn-solid btn-sm rd-cta" id="rd-cta" href="https://wa.me/5491162626702" target="_blank" rel="noopener"><span class="rd-cta-l">Aplicar este documento</span><span class="rd-cta-s">Aplicar</span> <span class="arr" aria-hidden="true">→</span></a>
       <button class="icon-btn rd-sum-btn" type="button" id="rd-sum" aria-expanded="false" aria-controls="rd-aside">Resumen</button>
       <span class="rd-pbnav" style="display:flex;gap:6px">
         <button class="icon-btn" type="button" id="rd-prev" aria-label="Playbook anterior"><span aria-hidden="true">‹</span></button>
@@ -773,6 +779,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     var pb=C.playbooks[j]; cur=pb;
     $('rd-eyebrow').textContent='Serie '+pad(serieOf(pb))+' · Playbook '+pad(posOf(pb))+' / 03';
     $('rd-title').setAttribute('data-k','playbooks.'+j+'.title');
+    $('rd-cta').href='https://wa.me/5491162626702?text='+encodeURIComponent('Hola! Quiero aplicar este playbook: '+pb.title);
     $('rd-pages').innerHTML=bandsHtml(pb);
     $('rd-aside').innerHTML=
       '<div class="sum">'+
