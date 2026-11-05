@@ -162,14 +162,14 @@ html{scroll-behavior:smooth}
 }
 
 /* optin: el botón se abre hacia abajo con todo a la vista */
-.opt{order:2;margin-top:28px;position:relative;display:inline-block;z-index:4;--fw:min(440px,calc(100cqw - 40px));--bh:68px;--br:34px}
+.opt{order:2;margin-top:28px;position:relative;display:inline-block;z-index:4;--fw:min(420px,calc(100cqw - 40px));--bh:68px;--br:34px}
 .opt.open{z-index:8}
 .inside .opt,.close .opt{margin-top:40px}
 .opt .btn{margin-top:0;transition:transform .15s ease,background .15s ease,opacity .18s ease}
 .opt.open .btn{opacity:0;pointer-events:none}
-.opt-f{position:absolute;top:0;left:50%;width:var(--fw);margin:0 0 0 calc(var(--fw) / -2);box-sizing:border-box;padding:16px;display:grid;gap:10px;background:var(--accent,#FF2518);color:#F3F0E9;border-radius:26px;clip-path:inset(0 calc((100% - var(--bw,320px)) / 2) calc(100% - var(--bh)) round var(--br));opacity:0;visibility:hidden;transition:clip-path .5s cubic-bezier(.22,1,.36,1),opacity .1s ease,visibility 0s linear .5s}
-.opt.open .opt-f{clip-path:inset(0 round 26px);opacity:1;visibility:visible;transition:clip-path .5s cubic-bezier(.22,1,.36,1),opacity .06s ease}
-.opt.abierto .opt-f{clip-path:none;box-shadow:0 24px 50px rgba(36,35,33,.28)}
+.opt-f{position:absolute;top:0;left:50%;width:var(--fw);margin:0 0 0 calc(var(--fw) / -2);box-sizing:border-box;padding:20px 20px 14px;display:grid;gap:14px;background:#FFFDF9;color:#242321;border:1px solid rgba(36,35,33,.14);border-radius:20px;clip-path:inset(0 calc((100% - var(--bw,320px)) / 2) calc(100% - var(--bh)) round var(--br));opacity:0;visibility:hidden;transition:clip-path .5s cubic-bezier(.22,1,.36,1),opacity .1s ease,visibility 0s linear .5s}
+.opt.open .opt-f{clip-path:inset(0 round 20px);opacity:1;visibility:visible;transition:clip-path .5s cubic-bezier(.22,1,.36,1),opacity .06s ease}
+.opt.abierto .opt-f{clip-path:none;box-shadow:0 16px 36px rgba(36,35,33,.12)}
 .inside .opt-f{left:0;margin-left:0;clip-path:inset(0 calc(100% - var(--bw,320px)) calc(100% - var(--bh)) 0 round var(--br))}
 .opt-f>:not(.opt-ok):not(.opt-t){opacity:0;transform:translateY(10px);transition:opacity .2s ease,transform .32s cubic-bezier(.22,1,.36,1)}
 .opt.open .opt-f>:not(.opt-ok):not(.opt-t){opacity:1;transform:none}
@@ -177,14 +177,16 @@ html{scroll-behavior:smooth}
 .opt.open .opt-f>:nth-child(3){transition-delay:.15s}
 .opt.open .opt-f>:nth-child(4){transition-delay:.2s}
 .opt.open .opt-f>:nth-child(5){transition-delay:.25s}
-.opt-i,.opt-tel{height:54px;box-sizing:border-box;width:100%;background:#FFFDF9;color:#242321;border:0;border-radius:14px;transition:box-shadow .15s ease}
-.opt-i:focus,.opt-tel:focus-within{box-shadow:0 0 0 3px rgba(243,240,233,.55)}
-.opt-i,.opt-tel input{outline:0;font:500 17px 'Inter Tight','Inter',system-ui,sans-serif;color:#242321}
-.opt-i{padding:0 16px}
-.opt-i::placeholder,.opt-tel input::placeholder{color:#6f6a63;opacity:1}
+.opt-b{display:grid;gap:4px;min-width:0}
+.opt-b label{font:600 13px 'Inter Tight','Inter',system-ui,sans-serif;color:#6f6a63}
+.opt-i,.opt-tel{height:42px;width:100%;box-sizing:border-box;background:none;color:#242321;border:0;border-bottom:1.5px solid rgba(36,35,33,.16);border-radius:0;transition:border-color .15s ease}
+.opt-i:focus,.opt-tel:focus-within{border-bottom-color:var(--accent,#FF2518)}
+.opt-i,.opt-tel input{outline:0;padding:0;font:500 17px 'Inter Tight','Inter',system-ui,sans-serif;color:#242321}
+.opt-i::placeholder,.opt-tel input::placeholder{color:#8c877f;opacity:1}
+.opt-i:-webkit-autofill,.opt-tel input:-webkit-autofill{-webkit-text-fill-color:#242321;-webkit-box-shadow:0 0 0 60px #FFFDF9 inset;box-shadow:0 0 0 60px #FFFDF9 inset;caret-color:#242321}
 .opt-tel{position:relative;display:flex;align-items:center}
-.opt-tel input{flex:1;min-width:0;height:100%;border:0;background:none;padding:0 16px 0 12px}
-.opt-pais{flex:none;height:100%;display:flex;align-items:center;gap:7px;padding:0 12px 0 14px;border:0;border-right:1px solid rgba(36,35,33,.14);background:none;color:#242321;cursor:pointer;font:600 16px 'Inter Tight','Inter',system-ui,sans-serif}
+.opt-tel input{flex:1;min-width:0;height:100%;border:0;background:none}
+.opt-pais{flex:none;height:26px;display:flex;align-items:center;gap:7px;margin-right:12px;padding:0 12px 0 0;border:0;border-right:1px solid rgba(36,35,33,.16);background:none;color:#242321;cursor:pointer;font:600 16px 'Inter Tight','Inter',system-ui,sans-serif}
 .opt-pais img,.opt-l img{flex:none;display:block;width:24px;height:16px;object-fit:cover;border-radius:2px}
 .opt-pais svg{display:block;transition:transform .2s ease}
 .opt.lista .opt-pais svg{transform:rotate(180deg)}
@@ -194,10 +196,14 @@ html{scroll-behavior:smooth}
 .opt-l button:hover,.opt-l button:focus-visible,.opt-l button[aria-selected=true]{background:#F3F0E9;outline:0}
 .opt-l span{flex:1;min-width:0}
 .opt-l small{font:500 14px 'Inter Tight','Inter',sans-serif;color:#5f5c57}
-.opt-go{height:56px;display:flex;align-items:center;justify-content:center;gap:14px;border:0;border-radius:999px;background:#242321;color:#F3F0E9;cursor:pointer;font:700 17px 'Inter Tight','Inter',sans-serif;letter-spacing:.02em;text-transform:uppercase}
-.opt-go:hover{background:#3a3835}
-.opt-h{margin:2px 6px 0;text-align:center;font:500 14px/1.35 'Inter Tight','Inter',system-ui,sans-serif;color:#F3F0E9}
-.opt-ok{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;text-align:center;font:700 20px/1.2 'Inter Tight','Inter',sans-serif;opacity:0;pointer-events:none;transition:opacity .22s ease .12s}
+.opt-go{height:54px;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:14px;border:0;border-radius:999px;background:var(--accent,#FF2518);color:#F3F0E9;cursor:pointer;font:700 16px 'Inter Tight','Inter',sans-serif;letter-spacing:.02em;text-transform:uppercase;transition:background .15s ease}
+.opt-go:hover{background:#B40210}
+.opt-h{margin:0;min-height:20px;text-align:center;font:500 14px/20px 'Inter Tight','Inter',system-ui,sans-serif;color:#6f6a63}
+.opt-h.mal{color:#B40210}
+.opt-h span{display:inline-block;opacity:0;transform:translateY(6px);animation:opt-p .32s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--n) * 45ms)}
+@keyframes opt-p{to{opacity:1;transform:none}}
+.opt-ok{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;text-align:center;color:#242321;font:700 20px/1.2 'Inter Tight','Inter',sans-serif;opacity:0;pointer-events:none;transition:opacity .22s ease .12s}
+.opt-ok svg{color:var(--accent,#FF2518)}
 .opt.fin .opt-f>:not(.opt-ok):not(.opt-t){opacity:0;pointer-events:none;transition-delay:0s}
 .opt.fin .opt-ok{opacity:1}
 .opt-c{stroke-dasharray:124;stroke-dashoffset:124}
@@ -213,10 +219,10 @@ html{scroll-behavior:smooth}
 .stage:has(.opt.open) .note{opacity:0}
 @container (max-width: 720px){
   .opt{display:block;width:100%;--fw:100%;--bh:64px;--br:32px}
-  .opt-f,.inside .opt-f{left:0;margin-left:0;padding:14px;clip-path:inset(0 0 calc(100% - var(--bh)) round var(--br))}
+  .opt-f,.inside .opt-f{left:0;margin-left:0;padding:18px 18px 12px;clip-path:inset(0 0 calc(100% - var(--bh)) round var(--br))}
   .opt-i,.opt-tel input{font-size:16px}
 }
-@media (prefers-reduced-motion:reduce){.opt-f,.opt.open .opt-f,.opt-f>*{transition:none!important}.opt.mal{animation:none}.opt-c,.opt-k{stroke-dashoffset:0;animation:none!important}}
+@media (prefers-reduced-motion:reduce){.opt-f,.opt.open .opt-f,.opt-f>*{transition:none!important}.opt-h span{opacity:1;transform:none;animation:none}.opt.mal{animation:none}.opt-c,.opt-k{stroke-dashoffset:0;animation:none!important}}
 </style>
 </head>
 <body>
@@ -406,17 +412,23 @@ html{scroll-behavior:smooth}
     form.noValidate = true;
     form.innerHTML =
       '<input class="opt-t" name="sitio" tabindex="-1" autocomplete="off" aria-hidden="true">' +
-      '<input class="opt-i" type="email" name="email" inputmode="email" autocomplete="email" placeholder="Tu mail" aria-label="Tu mail">' +
-      '<div class="opt-tel"><button class="opt-pais" type="button" aria-haspopup="listbox" aria-expanded="false"><img alt=""><b></b><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg></button><input type="tel" name="tel" inputmode="tel" autocomplete="tel-national" placeholder="Tu WhatsApp" aria-label="Tu WhatsApp"><ul class="opt-l" role="listbox"></ul></div>' +
+      '<div class="opt-b"><label for="opt-mail-' + i + '">Tu mail</label><input class="opt-i" id="opt-mail-' + i + '" type="email" name="email" inputmode="email" autocomplete="email" placeholder="nombre@mail.com"></div>' +
+      '<div class="opt-b"><label for="opt-tel-' + i + '">Tu WhatsApp</label><div class="opt-tel"><button class="opt-pais" type="button" aria-haspopup="listbox" aria-expanded="false"><img alt=""><b></b><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg></button><input id="opt-tel-' + i + '" type="tel" name="tel" inputmode="tel" autocomplete="tel-national" placeholder="Tu número"><ul class="opt-l" role="listbox"></ul></div></div>' +
       '<button class="opt-go" type="submit">Ingresar a recursos <span aria-hidden="true">→</span></button>' +
       '<p class="opt-h" aria-live="polite"></p>' +
       '<div class="opt-ok" aria-live="polite"><svg width="46" height="46" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="opt-c" cx="23" cy="23" r="19.5"></circle><path class="opt-k" d="M14.5 23.5l6 6 11-12.5"></path></svg><span>Listo, te llevamos a los recursos</span></div>';
     caja.appendChild(form);
 
-    var AYUDA = 'Para enviarte próximos recursos. El WhatsApp, por si no te llegan al mail.';
+    var AYUDA_MAIL = 'Para enviarte próximos recursos', AYUDA_TEL = 'Por si no te llegan al mail';
+    var seccion = caja.closest('section');
     var mail = form.elements.email, tel = form.elements.tel, ayuda = form.querySelector('.opt-h');
     var chip = form.querySelector('.opt-pais'), lista = form.querySelector('.opt-l'), pais = null, fin = false, reloj = 0;
-    ayuda.textContent = AYUDA;
+    function decir(texto, error) {
+      if (ayuda.getAttribute('data-t') === texto) { return; }
+      ayuda.setAttribute('data-t', texto);
+      ayuda.classList.toggle('mal', !!error);
+      ayuda.innerHTML = texto.split(' ').map(function (p, n) { return '<span style="--n:' + n + '">' + p + '</span>'; }).join(' ');
+    }
     lista.innerHTML = PAISES.map(function (p) {
       return '<li><button type="button" role="option" data-pais="' + p[0] + '"><img loading="lazy" src="assets/banderas/' + p[0] + '.png" alt=""><span>' + p[1] + '</span><small>+' + p[2] + '</small></button></li>';
     }).join('');
@@ -443,22 +455,28 @@ html{scroll-behavior:smooth}
       caja.classList.remove('mal');
       void caja.offsetWidth;
       caja.classList.add('mal');
-      ayuda.textContent = texto;
       campo.focus();
+      decir(texto, true);
     }
     function cerrar() {
       clearTimeout(reloj);
       mostrarLista(false);
       caja.classList.remove('open', 'abierto');
+      if (seccion) { seccion.style.paddingBottom = ''; }
       btn.focus({ preventScroll: true });
     }
 
     elegir(paisInicial());
-    form.addEventListener('input', function () { ayuda.textContent = AYUDA; });
+    mail.addEventListener('focus', function () { decir(AYUDA_MAIL); });
+    tel.addEventListener('focus', function () { decir(AYUDA_TEL); });
+    mail.addEventListener('input', function () { decir(AYUDA_MAIL); });
+    tel.addEventListener('input', function () { decir(AYUDA_TEL); });
 
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       caja.style.setProperty('--bw', btn.offsetWidth + 'px');
+      var falta = form.getBoundingClientRect().top + form.offsetHeight + 48 - (seccion ? seccion.getBoundingClientRect().bottom : 0);
+      if (seccion && falta > 0 && caja.closest('.close') === null) { seccion.style.paddingBottom = parseFloat(getComputedStyle(seccion).paddingBottom) + falta + 'px'; }
       caja.classList.add('open');
       mail.focus({ preventScroll: true });
       reloj = setTimeout(function () {
