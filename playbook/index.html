@@ -178,6 +178,12 @@ html{scroll-behavior:smooth}
 .opt.open .opt-f>:nth-child(4){transition-delay:.2s}
 .opt.open .opt-f>:nth-child(5){transition-delay:.25s}
 .opt-b{display:grid;gap:4px;min-width:0}
+.opt-tw{display:grid;grid-template-rows:0fr;margin-top:-14px;transition:grid-template-rows .46s cubic-bezier(.22,1,.36,1)}
+.opt-ti{min-height:0;overflow:hidden;visibility:hidden;opacity:0;transform:translateY(-10px);transition:opacity .26s ease,transform .46s cubic-bezier(.22,1,.36,1),visibility 0s linear .46s}
+.opt-ti .opt-b{padding-top:14px}
+.opt.contel .opt-tw{grid-template-rows:1fr}
+.opt.contel .opt-ti{visibility:visible;opacity:1;transform:none;transition-delay:.08s,0s,0s}
+.opt.telok .opt-ti{overflow:visible}
 .opt-b label{font:600 13px 'Inter Tight','Inter',system-ui,sans-serif;color:#6f6a63}
 .opt-i,.opt-tel{height:42px;width:100%;box-sizing:border-box;background:none;color:#242321;border:0;border-bottom:1.5px solid rgba(36,35,33,.16);border-radius:0;transition:border-color .15s ease}
 .opt-i:focus,.opt-tel:focus-within{border-bottom-color:var(--accent,#FF2518)}
@@ -200,6 +206,9 @@ html{scroll-behavior:smooth}
 .opt-go:hover{background:#B40210}
 .opt-h{margin:0;min-height:20px;text-align:center;font:500 14px/20px 'Inter Tight','Inter',system-ui,sans-serif;color:#6f6a63}
 .opt-h.mal{color:#B40210}
+.opt-m{position:relative;display:inline-block;padding:0 7px;font-weight:inherit;isolation:isolate}
+.opt-m::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:5px;background:rgba(255,37,24,.18);transform:scaleX(0);transform-origin:left center;animation:opt-r .5s cubic-bezier(.22,1,.36,1) .05s forwards}
+@keyframes opt-r{to{transform:none}}
 .opt-h span{display:inline-block;opacity:0;transform:translateY(6px);animation:opt-p .32s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--n) * 45ms)}
 @keyframes opt-p{to{opacity:1;transform:none}}
 .opt-ok{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;text-align:center;color:#242321;font:700 20px/1.2 'Inter Tight','Inter',sans-serif;opacity:0;pointer-events:none;transition:opacity .22s ease .12s}
@@ -222,7 +231,7 @@ html{scroll-behavior:smooth}
   .opt-f,.inside .opt-f{left:0;margin-left:0;padding:18px 18px 12px;clip-path:inset(0 0 calc(100% - var(--bh)) round var(--br))}
   .opt-i,.opt-tel input{font-size:16px}
 }
-@media (prefers-reduced-motion:reduce){.opt-f,.opt.open .opt-f,.opt-f>*{transition:none!important}.opt-h span{opacity:1;transform:none;animation:none}.opt.mal{animation:none}.opt-c,.opt-k{stroke-dashoffset:0;animation:none!important}}
+@media (prefers-reduced-motion:reduce){.opt-f,.opt.open .opt-f,.opt-f>*{transition:none!important}.opt-h span{opacity:1;transform:none;animation:none}.opt-m::before{transform:none;animation:none}.opt-tw,.opt-ti{transition:none}.opt.mal{animation:none}.opt-c,.opt-k{stroke-dashoffset:0;animation:none!important}}
 </style>
 </head>
 <body>
@@ -413,13 +422,13 @@ html{scroll-behavior:smooth}
     form.innerHTML =
       '<input class="opt-t" name="sitio" tabindex="-1" autocomplete="off" aria-hidden="true">' +
       '<div class="opt-b"><label for="opt-mail-' + i + '">Tu mail</label><input class="opt-i" id="opt-mail-' + i + '" type="email" name="email" inputmode="email" autocomplete="email" placeholder="nombre@mail.com"></div>' +
-      '<div class="opt-b"><label for="opt-tel-' + i + '">Tu WhatsApp</label><div class="opt-tel"><button class="opt-pais" type="button" aria-haspopup="listbox" aria-expanded="false"><img alt=""><b></b><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg></button><input id="opt-tel-' + i + '" type="tel" name="tel" inputmode="tel" autocomplete="tel-national" placeholder="Tu número"><ul class="opt-l" role="listbox"></ul></div></div>' +
+      '<div class="opt-tw"><div class="opt-ti"><div class="opt-b"><label for="opt-tel-' + i + '">Tu WhatsApp</label><div class="opt-tel"><button class="opt-pais" type="button" aria-haspopup="listbox" aria-expanded="false"><img alt=""><b></b><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg></button><input id="opt-tel-' + i + '" type="tel" name="tel" inputmode="tel" autocomplete="tel-national" placeholder="Tu número"><ul class="opt-l" role="listbox"></ul></div></div></div></div>' +
       '<button class="opt-go" type="submit">Ingresar a recursos <span aria-hidden="true">→</span></button>' +
       '<p class="opt-h" aria-live="polite"></p>' +
       '<div class="opt-ok" aria-live="polite"><svg width="46" height="46" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="opt-c" cx="23" cy="23" r="19.5"></circle><path class="opt-k" d="M14.5 23.5l6 6 11-12.5"></path></svg><span>Listo, te llevamos a los recursos</span></div>';
     caja.appendChild(form);
 
-    var AYUDA_MAIL = 'Para enviarte próximos recursos', AYUDA_TEL = 'Por si no te llegan al mail';
+    var AYUDA_MAIL = 'Para enviarte próximos recursos', AYUDA_TEL = 'Por si el mail te falla ;)', MAIL = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
     var seccion = caja.closest('section');
     var mail = form.elements.email, tel = form.elements.tel, ayuda = form.querySelector('.opt-h');
     var chip = form.querySelector('.opt-pais'), lista = form.querySelector('.opt-l'), pais = null, fin = false, reloj = 0;
@@ -427,8 +436,22 @@ html{scroll-behavior:smooth}
       if (ayuda.getAttribute('data-t') === texto) { return; }
       ayuda.setAttribute('data-t', texto);
       ayuda.classList.toggle('mal', !!error);
-      ayuda.innerHTML = texto.split(' ').map(function (p, n) { return '<span style="--n:' + n + '">' + p + '</span>'; }).join(' ');
+      var palabras = texto.split(' ').map(function (p, n) { return '<span style="--n:' + n + '">' + p + '</span>'; }).join(' ');
+      ayuda.innerHTML = texto === AYUDA_TEL ? '<b class="opt-m">' + palabras + '</b>' : palabras;
     }
+    function aire(extra) {
+      if (!seccion || caja.closest('.close')) { return; }
+      var falta = form.getBoundingClientRect().top + form.offsetHeight + extra + 48 - seccion.getBoundingClientRect().bottom;
+      if (falta > 0) { seccion.style.paddingBottom = parseFloat(getComputedStyle(seccion).paddingBottom) + falta + 'px'; }
+    }
+    function mostrarTel() {
+      if (caja.classList.contains('contel')) { return; }
+      aire(form.querySelector('.opt-ti').scrollHeight);
+      caja.classList.add('contel');
+      decir(AYUDA_TEL);
+      setTimeout(function () { caja.classList.add('telok'); }, 480);
+    }
+    function ayudaActual() { decir(caja.classList.contains('contel') ? AYUDA_TEL : AYUDA_MAIL); }
     lista.innerHTML = PAISES.map(function (p) {
       return '<li><button type="button" role="option" data-pais="' + p[0] + '"><img loading="lazy" src="assets/banderas/' + p[0] + '.png" alt=""><span>' + p[1] + '</span><small>+' + p[2] + '</small></button></li>';
     }).join('');
@@ -467,16 +490,18 @@ html{scroll-behavior:smooth}
     }
 
     elegir(paisInicial());
-    mail.addEventListener('focus', function () { decir(AYUDA_MAIL); });
-    tel.addEventListener('focus', function () { decir(AYUDA_TEL); });
-    mail.addEventListener('input', function () { decir(AYUDA_MAIL); });
-    tel.addEventListener('input', function () { decir(AYUDA_TEL); });
+    function revisarMail() {
+      if (MAIL.test(mail.value.trim())) { mostrarTel(); } else { ayudaActual(); }
+    }
+    mail.addEventListener('focus', ayudaActual);
+    mail.addEventListener('input', revisarMail);
+    mail.addEventListener('change', revisarMail);
+    tel.addEventListener('input', ayudaActual);
 
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       caja.style.setProperty('--bw', btn.offsetWidth + 'px');
-      var falta = form.getBoundingClientRect().top + form.offsetHeight + 48 - (seccion ? seccion.getBoundingClientRect().bottom : 0);
-      if (seccion && falta > 0 && caja.closest('.close') === null) { seccion.style.paddingBottom = parseFloat(getComputedStyle(seccion).paddingBottom) + falta + 'px'; }
+      aire(0);
       caja.classList.add('open');
       mail.focus({ preventScroll: true });
       reloj = setTimeout(function () {
@@ -505,7 +530,8 @@ html{scroll-behavior:smooth}
       e.preventDefault();
       if (fin) { return; }
       var correo = mail.value.trim(), numero = completo(tel.value), digitos = numero.replace(/\D/g, '');
-      if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(correo)) { mal('Revisá el mail', mail); return; }
+      if (!MAIL.test(correo)) { mal('Revisá el mail', mail); return; }
+      if (!caja.classList.contains('contel')) { mostrarTel(); tel.focus({ preventScroll: true }); return; }
       if (digitos.length < 8 || digitos.length > 15 || tel.value.replace(/\D/g, '').length < 6) { mal('Revisá el WhatsApp', tel); return; }
       fin = true;
       mostrarLista(false);
