@@ -178,6 +178,14 @@ html{scroll-behavior:smooth}
 .opt.open .opt-f>:nth-child(4){transition-delay:.2s}
 .opt.open .opt-f>:nth-child(5){transition-delay:.25s}
 .opt-b{display:grid;gap:4px;min-width:0}
+.opt-mw{position:relative;display:block}
+.opt-mw .opt-i{padding-right:34px}
+.opt-v{position:absolute;right:2px;top:50%;margin-top:-12px;display:block;color:var(--accent,#FF2518);opacity:0;transition:opacity .14s ease}
+.opt.mailok .opt-v{opacity:1}
+.opt-vc{stroke-dasharray:60;stroke-dashoffset:60}
+.opt-vk{stroke-dasharray:16;stroke-dashoffset:16}
+.opt.mailok .opt-vc{animation:opt-d .4s cubic-bezier(.65,0,.35,1) forwards}
+.opt.mailok .opt-vk{animation:opt-d .24s cubic-bezier(.65,0,.35,1) .34s forwards}
 .opt-tw{display:grid;grid-template-rows:0fr;margin-top:-14px;transition:grid-template-rows .46s cubic-bezier(.22,1,.36,1)}
 .opt-ti{min-height:0;overflow:hidden;visibility:hidden;opacity:0;transform:translateY(-10px);transition:opacity .26s ease,transform .46s cubic-bezier(.22,1,.36,1),visibility 0s linear .46s}
 .opt-ti .opt-b{padding-top:14px}
@@ -206,8 +214,9 @@ html{scroll-behavior:smooth}
 .opt-go:hover{background:#B40210}
 .opt-h{margin:0;min-height:20px;text-align:center;font:500 14px/20px 'Inter Tight','Inter',system-ui,sans-serif;color:#6f6a63}
 .opt-h.mal{color:#B40210}
-.opt-m{position:relative;display:inline-block;padding:0 7px;font-weight:inherit;isolation:isolate}
-.opt-m::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:5px;background:rgba(255,37,24,.18);transform:scaleX(0);transform-origin:left center;animation:opt-r .5s cubic-bezier(.22,1,.36,1) .05s forwards}
+.opt-m{position:relative;display:inline-block;padding:0 7px;font-weight:600;color:#242321;isolation:isolate}
+.opt-h .opt-x{display:block;margin-top:3px}
+.opt-m::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:5px;background:rgba(255,37,24,.36);transform:scaleX(0);transform-origin:left center;animation:opt-r .5s cubic-bezier(.22,1,.36,1) .05s forwards}
 @keyframes opt-r{to{transform:none}}
 .opt-h span{display:inline-block;opacity:0;transform:translateY(6px);animation:opt-p .32s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--n) * 45ms)}
 @keyframes opt-p{to{opacity:1;transform:none}}
@@ -231,7 +240,7 @@ html{scroll-behavior:smooth}
   .opt-f,.inside .opt-f{left:0;margin-left:0;padding:18px 18px 12px;clip-path:inset(0 0 calc(100% - var(--bh)) round var(--br))}
   .opt-i,.opt-tel input{font-size:16px}
 }
-@media (prefers-reduced-motion:reduce){.opt-f,.opt.open .opt-f,.opt-f>*{transition:none!important}.opt-h span{opacity:1;transform:none;animation:none}.opt-m::before{transform:none;animation:none}.opt-tw,.opt-ti{transition:none}.opt.mal{animation:none}.opt-c,.opt-k{stroke-dashoffset:0;animation:none!important}}
+@media (prefers-reduced-motion:reduce){.opt-f,.opt.open .opt-f,.opt-f>*{transition:none!important}.opt-h span{opacity:1;transform:none;animation:none}.opt-vc,.opt-vk{stroke-dashoffset:0;animation:none!important}.opt-m::before{transform:none;animation:none}.opt-tw,.opt-ti{transition:none}.opt.mal{animation:none}.opt-c,.opt-k{stroke-dashoffset:0;animation:none!important}}
 </style>
 </head>
 <body>
@@ -421,14 +430,14 @@ html{scroll-behavior:smooth}
     form.noValidate = true;
     form.innerHTML =
       '<input class="opt-t" name="sitio" tabindex="-1" autocomplete="off" aria-hidden="true">' +
-      '<div class="opt-b"><label for="opt-mail-' + i + '">Tu mail</label><input class="opt-i" id="opt-mail-' + i + '" type="email" name="email" inputmode="email" autocomplete="email" placeholder="nombre@mail.com"></div>' +
+      '<div class="opt-b"><label for="opt-mail-' + i + '">Tu mail</label><span class="opt-mw"><input class="opt-i" id="opt-mail-' + i + '" type="email" name="email" inputmode="email" autocomplete="email" placeholder="nombre@mail.com"><svg class="opt-v" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="opt-vc" cx="12" cy="12" r="9"></circle><path class="opt-vk" d="M7.8 12.4l3 3 5.4-6.2"></path></svg></span></div>' +
       '<div class="opt-tw"><div class="opt-ti"><div class="opt-b"><label for="opt-tel-' + i + '">Tu WhatsApp</label><div class="opt-tel"><button class="opt-pais" type="button" aria-haspopup="listbox" aria-expanded="false"><img alt=""><b></b><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg></button><input id="opt-tel-' + i + '" type="tel" name="tel" inputmode="tel" autocomplete="tel-national" placeholder="Tu número"><ul class="opt-l" role="listbox"></ul></div></div></div></div>' +
       '<button class="opt-go" type="submit">Ingresar a recursos <span aria-hidden="true">→</span></button>' +
       '<p class="opt-h" aria-live="polite"></p>' +
       '<div class="opt-ok" aria-live="polite"><svg width="46" height="46" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="opt-c" cx="23" cy="23" r="19.5"></circle><path class="opt-k" d="M14.5 23.5l6 6 11-12.5"></path></svg><span>Listo, te llevamos a los recursos</span></div>';
     caja.appendChild(form);
 
-    var AYUDA_MAIL = 'Para enviarte próximos recursos', AYUDA_TEL = 'Por si el mail te falla ;)', MAIL = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
+    var AYUDA_MAIL = 'Para enviarte próximos recursos', AYUDA_TEL = 'Por si el mail te falla ;)', AYUDA_FIN = '(no te vamos a pedir nada más)', MAIL = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
     var seccion = caja.closest('section');
     var mail = form.elements.email, tel = form.elements.tel, ayuda = form.querySelector('.opt-h');
     var chip = form.querySelector('.opt-pais'), lista = form.querySelector('.opt-l'), pais = null, fin = false, reloj = 0;
@@ -437,7 +446,8 @@ html{scroll-behavior:smooth}
       ayuda.setAttribute('data-t', texto);
       ayuda.classList.toggle('mal', !!error);
       var palabras = texto.split(' ').map(function (p, n) { return '<span style="--n:' + n + '">' + p + '</span>'; }).join(' ');
-      ayuda.innerHTML = texto === AYUDA_TEL ? '<b class="opt-m">' + palabras + '</b>' : palabras;
+      var cola = AYUDA_FIN.split(' ').map(function (p, n) { return '<span style="--n:' + (n + 6) + '">' + p + '</span>'; }).join(' ');
+      ayuda.innerHTML = texto === AYUDA_TEL ? '<b class="opt-m">' + palabras + '</b><i class="opt-x" style="font-style:normal">' + cola + '</i>' : palabras;
     }
     function aire(extra) {
       if (!seccion || caja.closest('.close')) { return; }
@@ -446,7 +456,7 @@ html{scroll-behavior:smooth}
     }
     function mostrarTel() {
       if (caja.classList.contains('contel')) { return; }
-      aire(form.querySelector('.opt-ti').scrollHeight);
+      aire(form.querySelector('.opt-ti').scrollHeight + 24);
       caja.classList.add('contel');
       decir(AYUDA_TEL);
       setTimeout(function () { caja.classList.add('telok'); }, 480);
@@ -490,8 +500,16 @@ html{scroll-behavior:smooth}
     }
 
     elegir(paisInicial());
+    var espera = 0, bajada = 0;
     function revisarMail() {
-      if (MAIL.test(mail.value.trim())) { mostrarTel(); } else { ayudaActual(); }
+      clearTimeout(espera);
+      clearTimeout(bajada);
+      if (!MAIL.test(mail.value.trim())) { caja.classList.remove('mailok'); ayudaActual(); return; }
+      ayudaActual();
+      espera = setTimeout(function () {
+        caja.classList.add('mailok');
+        bajada = setTimeout(mostrarTel, 1000);
+      }, 350);
     }
     mail.addEventListener('focus', ayudaActual);
     mail.addEventListener('input', revisarMail);
@@ -531,7 +549,14 @@ html{scroll-behavior:smooth}
       if (fin) { return; }
       var correo = mail.value.trim(), numero = completo(tel.value), digitos = numero.replace(/\D/g, '');
       if (!MAIL.test(correo)) { mal('Revisá el mail', mail); return; }
-      if (!caja.classList.contains('contel')) { mostrarTel(); tel.focus({ preventScroll: true }); return; }
+      if (!caja.classList.contains('contel')) {
+        clearTimeout(espera);
+        clearTimeout(bajada);
+        caja.classList.add('mailok');
+        mostrarTel();
+        tel.focus({ preventScroll: true });
+        return;
+      }
       if (digitos.length < 8 || digitos.length > 15 || tel.value.replace(/\D/g, '').length < 6) { mal('Revisá el WhatsApp', tel); return; }
       fin = true;
       mostrarLista(false);
@@ -540,8 +565,8 @@ html{scroll-behavior:smooth}
       var guardado = enviar('', { email: correo, origen: ORIGENES[i], sitio: form.elements.sitio.value }).then(function () {
         return enviar('/telefono', { email: correo, telefono: numero });
       });
-      var espera = new Promise(function (ok) { setTimeout(ok, 1700); });
-      Promise.all([guardado, espera]).then(function () { location.href = DESTINO; });
+      var minimo = new Promise(function (ok) { setTimeout(ok, 1700); });
+      Promise.all([guardado, minimo]).then(function () { location.href = DESTINO; });
     });
   });
 })();
