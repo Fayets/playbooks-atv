@@ -44,7 +44,9 @@ h2{font-size:clamp(34px,4.4cqw,62px)}
 .play:hover{transform:scale(1.06)}
 .v-bar{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid rgba(243,240,233,.14)}
 .v-bar .mono{color:#D9D4CB}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
+.video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.video .play{position:relative;z-index:2;margin-top:0}
+.video.on .play{display:none}
 html{scroll-behavior:smooth}
 .btn{order:2;margin-top:28px;display:inline-flex;align-items:center;justify-content:center;gap:16px;background:var(--accent,#FF2518);color:#F3F0E9;font-family:'Inter Tight','Inter',sans-serif;font-weight:700;font-size:20px;line-height:1;text-transform:uppercase;letter-spacing:.02em;padding:0 36px;height:68px;border-radius:999px;text-decoration:none;box-shadow:0 14px 30px rgba(255,37,24,.22);transition:transform .15s ease,background .15s ease;position:relative;z-index:2}
 .btn:hover{background:#B40210;color:#F3F0E9;transform:translateY(-1px)}
@@ -203,7 +205,8 @@ html{scroll-behavior:smooth}
       </div>
 
       <div class="video" id="video">
-        <iframe src="https://www.loom.com/embed/11d9ba220ba34ea492b6b0f90b8961d6?hide_owner=true&amp;hide_share=true&amp;hide_title=true&amp;hideEmbedTopBar=true" title="Cómo usar los recursos" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <video id="vid" src="assets/video.mp4" poster="assets/poster.jpg" preload="metadata" playsinline controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture></video>
+        <button class="play" id="vid-play" type="button" aria-label="Reproducir el video de cómo usar los recursos"><svg width="34" height="38" viewBox="0 0 34 38" aria-hidden="true"><path d="M4 3 L31 19 L4 35 Z" fill="#F3F0E9"></path></svg></button>
       </div>
 
       <a class="btn" href="https://recursos.atvos.io/">Ingresar a recursos <span class="arr">→</span></a>
@@ -305,5 +308,16 @@ html{scroll-behavior:smooth}
 </div>
 
 
+<script>
+(function () {
+  var box = document.getElementById('video'), v = document.getElementById('vid');
+  document.getElementById('vid-play').addEventListener('click', function () {
+    box.classList.add('on'); v.controls = true; v.play();
+  });
+  v.addEventListener('ended', function () {
+    box.classList.remove('on'); v.controls = false; v.load();
+  });
+})();
+</script>
 </body>
 </html>
