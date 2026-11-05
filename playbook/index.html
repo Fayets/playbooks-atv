@@ -190,11 +190,27 @@ html{scroll-behavior:smooth}
 .micro{transition:opacity .16s ease;font-family:'Inter Tight','Inter',system-ui,sans-serif;font-size:15px;font-weight:500;letter-spacing:0;text-transform:none}
 .note{transition:opacity .2s ease}
 .stage:has(.opt.open) .note{opacity:0}
+.opt-s[data-paso=tel]{padding-left:12px}
+.opt-pais{flex:none;height:48px;display:flex;align-items:center;gap:7px;padding:0 10px 0 12px;border:0;border-radius:24px;background:rgba(36,35,33,.16);color:#F3F0E9;cursor:pointer;font:600 17px 'Inter Tight','Inter',system-ui,sans-serif;transition:background .15s ease}
+.opt-pais:hover{background:rgba(36,35,33,.26)}
+.opt-pais img,.opt-l img{flex:none;display:block;width:24px;height:16px;object-fit:cover;border-radius:2px}
+.opt-pais svg{display:block;transition:transform .2s ease}
+.opt.lista .opt-pais svg{transform:rotate(180deg)}
+.opt-l{position:absolute;left:calc(50% - var(--fw) / 2 + 8px);top:calc(100% + 10px);width:320px;margin:0;padding:6px;list-style:none;background:#FFFDF9;color:#242321;border:1px solid rgba(36,35,33,.16);border-radius:16px;box-shadow:0 20px 44px rgba(36,35,33,.22);max-height:286px;overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .16s ease,transform .22s cubic-bezier(.22,1,.36,1),visibility 0s linear .22s;z-index:6;box-sizing:border-box}
+.opt.lista .opt-l{opacity:1;visibility:visible;transform:none;transition:opacity .16s ease,transform .22s cubic-bezier(.22,1,.36,1)}
+.inside .opt-l{left:8px}
+.opt-l button{width:100%;display:flex;align-items:center;gap:12px;padding:10px 12px;border:0;border-radius:10px;background:none;color:inherit;cursor:pointer;text-align:left;font:500 15px 'Inter',system-ui,sans-serif}
+.opt-l button:hover,.opt-l button:focus-visible,.opt-l button[aria-selected=true]{background:#F3F0E9;outline:0}
+.opt-l span{flex:1;min-width:0}
+.opt-l small{font:500 14px 'Inter Tight','Inter',sans-serif;color:#5f5c57}
 @container (max-width: 720px){
   .opt{display:block;width:100%;--fw:100%}
   .opt-f,.inside .opt-f{height:64px;left:0;margin-left:0;clip-path:inset(0 round 32px)}
   .opt.open .opt-f{clip-path:inset(0 round 32px)}
   .opt-s{padding:0 6px 0 24px}
+  .opt-s[data-paso=tel]{padding-left:8px}
+  .opt-pais{height:46px;font-size:16px;padding:0 8px 0 10px;gap:6px}
+  .opt-l,.inside .opt-l{left:0;width:100%}
   .opt-s input{font-size:18px}
   .opt-s.msg{padding:0 20px;font-size:15px}
 }
@@ -362,6 +378,15 @@ html{scroll-behavior:smooth}
 (function () {
   var DESTINO = 'https://recursos.atvos.io/', ORIGENES = ['hero', 'adentro', 'cierre'];
   var CHECK = '<svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="opt-c" cx="15" cy="15" r="12"></circle><path class="opt-k" d="M9.5 15.5l4 4 7-8"></path></svg>';
+  var PAISES = [['ar','Argentina','54'],['mx','México','52'],['co','Colombia','57'],['cl','Chile','56'],['pe','Perú','51'],['uy','Uruguay','598'],['py','Paraguay','595'],['bo','Bolivia','591'],['ec','Ecuador','593'],['ve','Venezuela','58'],['es','España','34'],['us','Estados Unidos','1'],['do','Rep. Dominicana','1'],['cr','Costa Rica','506'],['gt','Guatemala','502'],['pa','Panamá','507']];
+  var ZONAS = { Mexico: 'mx', Bogota: 'co', Santiago: 'cl', Lima: 'pe', Montevideo: 'uy', Asuncion: 'py', La_Paz: 'bo', Guayaquil: 'ec', Caracas: 've', Madrid: 'es', New_York: 'us', Chicago: 'us', Los_Angeles: 'us', Santo_Domingo: 'do', Costa_Rica: 'cr', Guatemala: 'gt', Panama: 'pa' };
+  function paisInicial() {
+    var zona = '';
+    try { zona = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    var ciudad = zona.split('/').pop();
+    if (ciudad === 'Mexico_City') { return 'mx'; }
+    return ZONAS[ciudad] || 'ar';
+  }
   var listo = false;
   try { listo = localStorage.getItem('atv_optin') === '1'; } catch (e) {}
   if (listo) { return; }
@@ -383,14 +408,60 @@ html{scroll-behavior:smooth}
       '<input class="opt-t" name="sitio" tabindex="-1" autocomplete="off" aria-hidden="true">' +
       '<div class="opt-s" data-paso="mail"><input type="email" name="email" inputmode="email" autocomplete="email" placeholder="Tu mejor mail" aria-label="Tu mail"><button class="opt-go" type="submit" aria-label="Seguir">→</button></div>' +
       '<div class="opt-s msg" data-paso="ok">' + CHECK + '<span>Listo</span></div>' +
-      '<div class="opt-s" data-paso="tel"><input type="tel" name="tel" inputmode="tel" autocomplete="tel" placeholder="Tu WhatsApp, con código de país" aria-label="Tu WhatsApp"><button class="opt-go" type="submit" aria-label="Enviar">→</button></div>' +
+      '<div class="opt-s" data-paso="tel"><button class="opt-pais" type="button" aria-haspopup="listbox" aria-expanded="false"><img alt=""><b></b><svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg></button><input type="tel" name="tel" inputmode="tel" autocomplete="tel-national" placeholder="Tu WhatsApp" aria-label="Tu WhatsApp"><button class="opt-go" type="submit" aria-label="Enviar">→</button></div>' +
       '<div class="opt-s msg" data-paso="fin">' + CHECK + '<span>Es solo para enviarte más recursos. Nada más.</span></div>';
     caja.appendChild(form);
+
+    var lista = document.createElement('ul');
+    lista.className = 'opt-l';
+    lista.setAttribute('role', 'listbox');
+    lista.innerHTML = PAISES.map(function (p) {
+      return '<li><button type="button" role="option" data-pais="' + p[0] + '"><img loading="lazy" src="assets/banderas/' + p[0] + '.png" alt=""><span>' + p[1] + '</span><small>+' + p[2] + '</small></button></li>';
+    }).join('');
+    caja.appendChild(lista);
+    var chip = form.querySelector('.opt-pais'), pais = null;
+    function elegir(iso) {
+      pais = PAISES.filter(function (p) { return p[0] === iso; })[0];
+      chip.querySelector('img').src = 'assets/banderas/' + iso + '.png';
+      chip.querySelector('b').textContent = '+' + pais[2];
+      chip.setAttribute('aria-label', 'País: ' + pais[1]);
+      lista.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-pais') === iso ? 'true' : 'false'); });
+    }
+    function mostrarLista(abrir) {
+      caja.classList.toggle('lista', abrir);
+      chip.setAttribute('aria-expanded', abrir ? 'true' : 'false');
+    }
+    elegir(paisInicial());
+    chip.addEventListener('click', function (e) {
+      e.stopPropagation();
+      mostrarLista(!caja.classList.contains('lista'));
+    });
+    lista.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) { return; }
+      e.stopPropagation();
+      elegir(b.getAttribute('data-pais'));
+      mostrarLista(false);
+      tel.focus({ preventScroll: true });
+    });
+    document.addEventListener('click', function (e) {
+      if (!caja.contains(e.target)) { mostrarLista(false); }
+    });
+    caja.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && caja.classList.contains('lista')) { e.stopPropagation(); mostrarLista(false); chip.focus(); }
+    });
 
     var pasos = Array.prototype.slice.call(form.querySelectorAll('.opt-s'));
     var mail = form.querySelector('[name=email]'), tel = form.querySelector('[name=tel]');
     var paso = null, correo = '';
 
+    function completo(valor) {
+      if (valor.trim().charAt(0) === '+') { return '+' + valor.replace(/\D/g, ''); }
+      var local = valor.replace(/\D/g, '').replace(/^0+/, '');
+      if (local.indexOf(pais[2]) === 0 && local.length > 10) { local = local.slice(pais[2].length); }
+      if (pais[0] === 'ar' && local.charAt(0) !== '9') { local = '9' + local; }
+      return '+' + pais[2] + local;
+    }
     function aviso(texto) {
       if (!micro) { return; }
       micro.style.opacity = 0;
@@ -426,7 +497,7 @@ html{scroll-behavior:smooth}
       caja.classList.add('open');
       ir(correo ? 'tel' : 'mail');
       (correo ? tel : mail).focus({ preventScroll: true });
-      aviso(correo ? 'Te escribimos solo por los recursos' : 'Dejá tu mail y entrás');
+      aviso(correo ? 'Te escribimos solo por los recursos' : 'Dejá tu mail');
     });
 
     form.addEventListener('keydown', function (e) {
@@ -444,9 +515,10 @@ html{scroll-behavior:smooth}
         aviso('Ahora tu WhatsApp');
         setTimeout(function () { ir('tel'); tel.focus({ preventScroll: true }); }, 1000);
       } else if (paso === 'tel') {
-        var digitos = tel.value.replace(/\D/g, '');
-        if (digitos.length < 8 || digitos.length > 15) { mal('Revisá el número'); tel.focus(); return; }
-        enviar('/telefono', { email: correo, telefono: tel.value });
+        var numero = completo(tel.value), digitos = numero.replace(/\D/g, '');
+        if (digitos.length < 8 || digitos.length > 15 || tel.value.replace(/\D/g, '').length < 6) { mal('Revisá el número'); tel.focus(); return; }
+        mostrarLista(false);
+        enviar('/telefono', { email: correo, telefono: numero });
         try { localStorage.setItem('atv_optin', '1'); } catch (err) {}
         ir('fin');
         aviso('Te llevamos a los recursos');
